@@ -82,9 +82,10 @@
     <ul class="nospace group">
      
 
-       <li class="one_third">
+       <li class="one_half first">
 
           <blockquote>
+            <p><h1>
 
       <?php
 				//If your session isn't valid, it returns you to the login screen for protection
@@ -102,8 +103,11 @@
 
 					$newpass = md5($myPassword); //This will make your password encrypted into md5, a high security hash
 
-					$sql = mysql_query( "INSERT INTO tbAdministrators(first_name, last_name, email, password) VALUES ('$myFirstName','$myLastName', '$myEmail', '$newpass')" )
-					        or die( mysql_error() );
+          $sql = mysql_query( "INSERT INTO tbAdministrators(first_name, last_name, email, password) VALUES ('$myFirstName','$myLastName', '$myEmail', '$myPassword')" )
+                  or die( mysql_error() );
+
+/*					$sql = mysql_query( "INSERT INTO tbAdministrators(first_name, last_name, email, password) VALUES ('$myFirstName','$myLastName', '$myEmail', '$newpass')" )
+					        or die( mysql_error() );*/
 
 					die( "A new administrator account has been created." );
 				}
@@ -118,13 +122,16 @@
 
 					$newpass = md5($myPassword); //This will make your password encrypted into md5, a high security hash
 
-					$sql = mysql_query( "UPDATE tbAdministrators SET first_name='$myFirstName', last_name='$myLastName', email='$myEmail', password='$newpass' WHERE admin_id = '$myId'" )
-					        or die( mysql_error() );
+/*					$sql = mysql_query( "UPDATE tbAdministrators SET first_name='$myFirstName', last_name='$myLastName', email='$myEmail', password='$newpass' WHERE admin_id = '$myId'" )
+					        or die( mysql_error() );*/
+
+          $sql = mysql_query( "UPDATE tbAdministrators SET first_name='$myFirstName', last_name='$myLastName', email='$myEmail', password='$myPassword' WHERE admin_id = '$myId'" ) or die( mysql_error() );
 
 					die( "An administrator account has been updated." );
 				}
 			?>
 
+        </h1></p>
       </blockquote>
 
         
