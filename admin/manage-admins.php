@@ -48,12 +48,12 @@
   <header id="header" class="hoc clear"> 
    
     <div id="logo" class="fl_left">
-      <h1><a href="index.html">ONLINE VOTING</a></h1>
+      <h1><a href="admin.php">ONLINE VOTING</a></h1>
     </div>
    
     <nav id="mainav" class="fl_right">
       <ul class="clear">
-        <li class="active"><a href="manage-admins.php">Home</a></li>
+        <li class="active"><a href="admin.php">Home</a></li>
         <li><a class="drop" href="#">Admin Panel Pages</a>
           <ul>
             <li><a href="manage-admins.php">Manage Admin</a></li>
@@ -63,7 +63,7 @@
           </ul>
         </li>
         
-        <li><a href="../index.php">Voter Panel</a></li>
+        <!-- <li><a href="../index.php">Voter Panel</a></li> -->
         <li><a href="logout.php">Logout</a></li>
 
       </ul>

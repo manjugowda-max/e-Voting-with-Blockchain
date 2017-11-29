@@ -4,20 +4,20 @@
     $log1 = $_SESSION['log1'];
 ?>
 <?php
-      if(isset($_COOKIE['$email']) && $_COOKIE['$pass']){
-            $curnam = $_SESSION['curname'];
-            $curpas = $_SESSION['curpass'];
-        }
-        else if($log1 == 11)
-        {
-            $curnam = $_SESSION['curname'];
-            $curpas = $_SESSION['curpass'];
-        }
-        else 
-        {
-           echo '<img src="e1.jpg" width="100%" height="100%"  />';  /* here goes the page when destroy the cookies */
-           exit;
-        }
+  if(isset($_COOKIE['$email']) && $_COOKIE['$pass']){
+        $curnam = $_SESSION['curname'];
+        $curpas = $_SESSION['curpass'];
+    }
+    else if($log1 == 11)
+    {
+        $curnam = $_SESSION['curname'];
+        $curpas = $_SESSION['curpass'];
+    }
+    else 
+    {
+       echo '<img src="e1.jpg" width="100%" height="100%"  />';  /* here goes the page when destroy the cookies */
+       exit;
+    }
 ?>
 
 
@@ -59,7 +59,7 @@
 <div class="wrapper row1">
   <header id="header" class="hoc clear"> 
     <div id="logo" class="fl_left">
-      <h1><a href="index.html">ONLINE VOTING</a></h1>
+      <h1><a href="admin.php">ONLINE VOTING</a></h1>
     </div>
     <nav id="mainav" class="fl_right">
       <ul class="clear">
@@ -73,7 +73,7 @@
           </ul>
         </li>
         
-        <li><a href="http://localhost/online_voting/index.php">Voter Panel</a></li>
+        <!-- <li><a href="../index.php">Voter Panel</a></li> -->
         <li><a href="logout.php">Logout</a></li>
 
       </ul>
