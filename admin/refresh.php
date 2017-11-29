@@ -1,42 +1,46 @@
 <?php
 require('../connection.php');
 // retrieving candidate(s) results based on position
-if (isset($_POST['Submit'])){   
-
+if (isset($_POST['Submit'])){
   $position = addslashes( $_POST['position'] );
   
-    $results = mysql_query("SELECT * FROM tbCandidates where candidate_position='$position'");
+  $results = mysql_query("SELECT * FROM tbCandidates where candidate_position='$position'");
 
-    $row1 = mysql_fetch_array($results); // for the first candidate
-    $row2 = mysql_fetch_array($results); // for the second candidate
-      if ($row1){
-      $candidate_name_1=$row1['candidate_name']; // first candidate name
-      $candidate_1=$row1['candidate_cvotes']; // first candidate votes
-      }
+  $row1 = mysql_fetch_array($results); // for the first candidate
+  $row2 = mysql_fetch_array($results); // for the second candidate
+  if ($row1){
+  $candidate_name_1=$row1['candidate_name']; // first candidate name
+  $candidate_1=$row1['candidate_cvotes']; // first candidate votes
+  }
 
-      if ($row2){
-      $candidate_name_2=$row2['candidate_name']; // second candidate name
-      $candidate_2=$row2['candidate_cvotes']; // second candidate votes
-      }
+  if ($row2){
+  $candidate_name_2=$row2['candidate_name']; // second candidate name
+  $candidate_2=$row2['candidate_cvotes']; // second candidate votes
+  }
 }
-    else
-        // do nothing
+
 ?> 
+
 <?php
 // retrieving positions sql query
 $positions=mysql_query("SELECT * FROM tbPositions")
 or die("There are no records to display ... \n" . mysql_error()); 
+
 ?>
+
 <?php
 session_start();
 //If your session isn't valid, it returns you to the login screen for protection
-if(empty($_SESSION['admin_id'])){
+if(empty($_SESSION['admin_id'])) {
  header("location:access-denied.php");
 }
 ?>
+
 <?php
 
-if(isset($_POST['Submit'])){$totalvotes=$candidate_1+$candidate_2;}
+if(isset($_POST['Submit'])) {
+  $totalvotes=$candidate_1+$candidate_2;
+}
 
 ?>
 
@@ -103,44 +107,48 @@ if(isset($_POST['Submit'])){$totalvotes=$candidate_1+$candidate_2;}
   </header>
 </div>
 
-<div >
- 
-  <div >
+<div id="header" class="hoc clear"></div>
+
+<div>
+  <div>
     <table width="420" align="center">
-    <form name="fmNames" id="fmNames" method="post" action="refresh.php" onSubmit="return positionValidate(this)">
-    <tr>
-        <td style="color:#000000";>Choose Position</td>
-        <td><SELECT NAME="position" id="position">
-        <OPTION  VALUE="select"><p style="color:black";>select</p>
-        <?php 
-        //loop through all table rows
-        while ($row=mysql_fetch_array($positions)){
-          echo "<OPTION VALUE=$row[position_name]>$row[position_name]"; 
-        }
-        ?>
-        </SELECT></td>
-        <td style="color:black";><input type="submit" name="Submit" value="See Results" /></td>
-    </tr>
-    <tr>
-     
-        
-    </tr>
-    </form> 
+      <form name="fmNames" id="fmNames" method="post" action="refresh.php" onSubmit="return positionValidate(this)">
+        <tr>
+          <td bgcolor="#5D7B9D" style="color:#ffffff">Choose Position</td>
+          <td bgcolor="#5D7B9D" style="color:#000000">
+            <SELECT NAME="position" id="position">
+              <OPTION  VALUE="select"><p style="color:black";>Select</p>
+              <?php 
+              //loop through all table rows
+              while ($row=mysql_fetch_array($positions)){
+                echo "<OPTION VALUE=$row[position_name]>$row[position_name]"; 
+              }
+              ?>
+            </SELECT>
+          </td>
+          <td bgcolor="#5D7B9D" style="color:#000000"><input type="submit" name="Submit" value="See Results" /></td>
+        </tr>
+        <tr>
+        </tr>
+      </form> 
     </table>
-    <?php if(isset($_POST['Submit'])){echo $candidate_name_1;} ?>:<br>
-    <img src="images/candidate-1.gif"
-    width='<?php if(isset($_POST['Submit'])){ if ($candidate_2 || $candidate_1 != 0){echo(100*round($candidate_1/($candidate_2+$candidate_1),2));}} ?>'
-    height='10'>
+
+    <?php if(isset($_POST['Submit'])){echo $candidate_name_1;} ?> :<br>
+    <img src="images/candidate-1.gif" height="10" 
+    width="<?php if(isset($_POST['Submit'])){ if ($candidate_2 || $candidate_1 != 0){echo(100*round($candidate_1/($candidate_2+$candidate_1),2));}} ?>" >
+
     <?php if(isset($_POST['Submit'])){ if ($candidate_2 || $candidate_1 != 0){echo(100*round($candidate_1/($candidate_2+$candidate_1),2));}} ?>% of <?php if(isset($_POST['Submit'])){echo $totalvotes;} ?> total votes
-    <br>votes <?php if(isset($_POST['Submit'])){ echo $candidate_1;} ?>
+    <br>Vote(s) <?php if(isset($_POST['Submit'])){ echo $candidate_1;} ?>
+
     <br>
     <br>
-    <?php if(isset($_POST['Submit'])){ echo $candidate_name_2;} ?>:<br>
-    <img src="images/candidate-2.gif"
-    width='<?php if(isset($_POST['Submit'])){ if ($candidate_2 || $candidate_1 != 0){echo(100*round($candidate_2/($candidate_2+$candidate_1),2));}} ?>'
-    height='10'>
+
+    <?php if(isset($_POST['Submit'])){ echo $candidate_name_2;} ?> :<br>
+    <img src="images/candidate-2.gif" height="10" 
+    width="<?php if(isset($_POST['Submit'])){ if ($candidate_2 || $candidate_1 != 0){echo(100*round($candidate_2/($candidate_2+$candidate_1),2));}} ?>" >
+
     <?php if(isset($_POST['Submit'])){ if ($candidate_2 || $candidate_1 != 0){echo(100*round($candidate_2/($candidate_2+$candidate_1),2));}} ?>% of <?php if(isset($_POST['Submit'])){echo $totalvotes;} ?> total votes
-    <br>votes <?php if(isset($_POST['Submit'])){ echo $candidate_2;} ?>
+    <br>Vote(s) <?php if(isset($_POST['Submit'])){ echo $candidate_2;} ?>
   
   </div>
 
