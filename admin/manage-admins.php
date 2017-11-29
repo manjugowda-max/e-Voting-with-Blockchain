@@ -127,7 +127,7 @@
 
           $sql = mysql_query( "UPDATE tbAdministrators SET first_name='$myFirstName', last_name='$myLastName', email='$myEmail', password='$myPassword' WHERE admin_id = '$myId'" ) or die( mysql_error() );
 
-					die( "An administrator account has been updated." );
+					die( "Your account has been updated." );
 				}
 			?>
 
@@ -144,38 +144,76 @@
 
 
 <table align="center">
-<tr>
-<td>
+  <tr>
+    <td>
 
-<form action="manage-admins.php?id=<?php echo $_SESSION['admin_id']; ?>" method="post" onSubmit="return updateProfile(this)">
-<table align="center">
-<CAPTION><h4>UPDATE ACCOUNT</h4></CAPTION>
-<tr><td>First Name:</td><td><input type="text"  font-weight:bold;" name="firstname" maxlength="15" value=""></td></tr>
-<tr><td>Last Name:</td><td><input type="text" font-weight:bold;" name="lastname" maxlength="15" value=""></td></tr>
-<tr><td>Email Address:</td><td><input type="text"  font-weight:bold;" name="email" maxlength="100" value=""></td></tr>
-<tr><td>New Password:</td><td><input type="password"  font-weight:bold;" name="password" maxlength="15" value=""></td></tr>
-<tr><td>Confirm New Password:</td><td><input type="password"  font-weight:bold;" name="ConfirmPassword" maxlength="15" value=""></td></tr>
-<tr><td>&nbsp;</td><td><input type="submit" name="update" value="Update Account"></td></tr>
-</table>
-</form>
+    <form action="manage-admins.php?id=<?php echo $_SESSION['admin_id']; ?>" method="post" onSubmit="return updateProfile(this)">
+      <table align="center">
+        <CAPTION><h4 style="color:#000000">UPDATE ACCOUNT</h4></CAPTION>
 
-</td>
-<td>
+        <tr>
+          <td style="color:#000000";>First Name:</td>
+          <td style="color:#000000"><input type="text"  font-weight:bold;" name="firstname" maxlength="15" value=""></td>
+        </tr>
+        <tr>
+          <td style="color:#000000">Last Name:</td>
+          <td style="color:#000000"><input type="text" font-weight:bold;" name="lastname" maxlength="15" value=""></td>
+        </tr>
+        <tr>
+          <td style="color:#000000">Email Address:</td>
+          <td style="color:#000000"><input type="text"  font-weight:bold;" name="email" maxlength="100" value=""></td>
+        </tr>
+        <tr>
+          <td style="color:#000000">New Password:</td>
+          <td style="color:#000000"><input type="password"  font-weight:bold;" name="password" maxlength="15" value=""></td>
+        </tr>
+        <tr>
+          <td style="color:#000000">Confirm New Password:</td>
+          <td style="color:#000000"><input type="password"  font-weight:bold;" name="ConfirmPassword" maxlength="15" value=""></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="color:#000000"><input type="submit" name="update" value="Update Account"></td>
+        </tr>
+      </table>
+    </form>
 
-<form action="manage-admins.php" method="post" onSubmit="return registerValidate(this)">
-<table align="center">
-<CAPTION><h4>CREATE ACCOUNT</h4></CAPTION>
-<tr><td>First Name:</td><td><input type="text"  font-weight:bold;" name="firstname" maxlength="15" value=""></td></tr>
-<tr><td>Last Name:</td><td><input type="text" font-weight:bold;" name="lastname" maxlength="15" value=""></td></tr>
-<tr><td>Email Address:</td><td><input type="text"  font-weight:bold;" name="email" maxlength="100" value=""></td></tr>
-<tr><td>Password:</td><td><input type="password" font-weight:bold;" name="password" maxlength="15" value=""></td></tr>
-<tr><td>Confirm Password:</td><td><input type="password" font-weight:bold;" name="ConfirmPassword" maxlength="15" value=""></td></tr>
-<tr><td>&nbsp;</td><td><input type="submit" name="submit" value="Create Account"></td></tr>
-</table>
-</form>
+    </td>
 
-</td>
-</tr>
+    <td>
+      <form action="manage-admins.php" method="post" onsubmit="return registerValidate(this)">
+        <table align="center">
+          <CAPTION><h4 style="color:#000000">CREATE ACCOUNT</h4></CAPTION>
+
+          <tr>
+            <td style="color:#000000">First Name:</td>
+            <td style="color:#000000"><input type="text"  font-weight:bold;" name="firstname" maxlength="15" value=""></td>
+          </tr>
+          <tr>
+            <td style="color:#000000">Last Name:</td>
+            <td style="color:#000000"><input type="text" font-weight:bold;" name="lastname" maxlength="15" value=""></td>
+          </tr>
+          <tr>
+            <td style="color:#000000">Email Address:</td>
+            <td style="color:#000000"><input type="text"  font-weight:bold;" name="email" maxlength="100" value=""></td>
+          </tr>
+          <tr>
+            <td style="color:#000000">Password:</td>
+            <td style="color:#000000"><input type="password" font-weight:bold;" name="password" maxlength="15" value=""></td>
+          </tr>
+          <tr>
+            <td style="color:#000000">Confirm Password:</td>
+            <td style="color:#000000"><input type="password" font-weight:bold;" name="ConfirmPassword" maxlength="15" value=""></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td style="color:#000000"><input type="submit" name="submit" value="Create Account"></td>
+          </tr>
+        </table>
+    </form>
+
+    </td>
+  </tr>
 </table>
 
 </div>

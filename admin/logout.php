@@ -8,12 +8,12 @@
       $pas=$_COOKIE['$pass'];
       $_SESSION['nam'] = $nam;
       $_SESSION['pas'] = $pas;
-      header("location: ../logout.php");
+      header("location: logout-admin.php");
       exit;
   }
   else
   {
-    header("location: ../logout.php");
+    header("location: logout-admin.php");
     exit;
   }
 ?>

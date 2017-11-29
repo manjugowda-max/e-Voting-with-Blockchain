@@ -11,8 +11,9 @@
 	if (mysql_num_rows($result)<1){
 	    $result = null;
 	}
-	?>
-	<?php
+?>
+
+<?php
 	// inserting sql query
 	if (isset($_POST['Submit']))
 	{
@@ -26,6 +27,7 @@
 	   header("Location: positions.php");
 	}
 ?>
+
 <?php
 	// deleting sql query
 	// check if the 'id' variable is set in URL
@@ -41,9 +43,6 @@
 	 // redirect back to positions
 	 header("Location: positions.php");
 	 }
-	 else
-	 // do nothing
-    
 ?>
 
 
@@ -114,31 +113,34 @@
   </header>
 </div>
 
+<div id="header" class="hoc clear"></div>
+
 <div >
 	<table width="380" align="center">
-	<CAPTION><h3>ADD NEW POSITION</h3></CAPTION>
+	<CAPTION><h3 style="color: #ffffff">ADD NEW POSITION</h3></CAPTION>
 	<form name="fmPositions" id="fmPositions" action="positions.php" method="post" onsubmit="return positionValidate(this)">
 	<tr>
-	    <td bgcolor="#00ff80">Position Name</td>
-	    <td bgcolor="#808080"><input type="text" name="position" /></td>
-	    <td bgcolor="#00FF00"><input type="submit" name="Submit" value="Add" /></td>
+	    <td bgcolor="#5D7B9D" style="color: #ffffff">Position Name</td>
+	    <td bgcolor="#5D7B9D" style="color: #000000"><input type="text" name="position" /></td>
+	    <td bgcolor="#5D7B9D" style="color: #000000"><input type="submit" name="Submit" value="Add" /></td>
 	</tr>
 	</table>
 
 	<table border="0" width="420" align="center">
-		<CAPTION><h3>AVAILABLE POSITIONS</h3></CAPTION>
-		<tr>
-		<th>Position ID</th>
-		<th>Position Name</th>
+		<CAPTION><h3 style="color: #ffffff">AVAILABLE POSITIONS</h3></CAPTION>
+		<tr bgcolor="#5D7B9D">
+		  <td bgcolor="#5D7B9D" style="color: #ffffff">Position ID</td>
+		  <td bgcolor="#5D7B9D" style="color: #ffffff">Position Name</td>
+      <td bgcolor="#5D7B9D"></td>
 		</tr>
 
 		<?php
 			//loop through all table rows
 			while ($row=mysql_fetch_array($result)){
 			echo "<tr>";
-			echo "<td>" . $row['position_id']."</td>";
-			echo "<td>" . $row['position_name']."</td>";
-			echo '<td><a href="positions.php?id=' . $row['position_id'] . '">Delete Position</a></td>';
+			echo '<td style="color: #000000">' . $row['position_id']."</td>";
+			echo '<td style="color: #000000">' . $row['position_name']."</td>";
+			echo '<td style="color: #000000">'.'<a style="color: #5D7B9D" href="positions.php?id=' . $row['position_id'] . '">Delete Position</a></td>';
 			echo "</tr>";
 			}
 			mysql_free_result($result);
@@ -216,4 +218,3 @@
 <!-- / IE9 Placeholder Support -->
 </body>
 </html>
-
