@@ -15,8 +15,9 @@
     }
     else 
     {
-       echo '<img src="images/e1.jpg" width="100%" height="100%"/>';  /* here goes the page when destroy the cookies */
-       exit;
+      /* here goes the page when destroy the cookies */
+      header( "location:access-denied.php" );
+      exit;
     }
 ?>
 

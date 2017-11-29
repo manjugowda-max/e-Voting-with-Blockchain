@@ -66,7 +66,7 @@ if( empty($_SESSION['member_id']) ) {
         <li><a class="drop" href="#">Voter Pages</a>
           <ul>
             <li><a href="vote.php">Vote</a></li>
-            <li><a href="manage-profile.php">Manage my profile</a></li>
+            <li><a href="manage-profile.php">Profile Manager</a></li>
           </ul>
         </li>
         

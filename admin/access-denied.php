@@ -84,7 +84,7 @@
 
       	<div id="container">
 		<div class="err"><h1>Access Denied!</h1></div>
-		  <p>You don't have access to this resource. <a href="login.php"><b>Click here</b></a> to login first.</p>
+		  <p>You don't have access to this resource. <a href="../admin/index.php"><b>Click here</b></a> to login first.</p>
 		</div>
 
 
