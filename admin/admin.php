@@ -86,13 +86,13 @@
    
     <h2 class="font-x3 uppercase btmspace-80 underlined"> Online <a href="#">Voting</a></h2>
     <ul class="nospace group">
-
-       <li class="one_third">
-
-          <blockquote><p><h1>In this page, Admin can set candidates for voting and view results.</h1></p></blockquote>
-        
-      </li> 
-
+		<li class="one_half first">
+	        <blockquote>
+	          	<div id="container">
+	        		<h1>In this page, Admin can set candidates for voting and view results.</h1>
+	        	</div>
+	        </blockquote>
+      	</li>
     </ul>
    
   </section>
