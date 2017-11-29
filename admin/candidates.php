@@ -17,11 +17,9 @@
 ?>
 
 <?php
-if (isset($_POST['Submit']))
-{
+  if (isset($_POST['Submit'])) {
     $newCandidateName = addslashes( $_POST['name'] ); //prevents types of SQL injection
-    $newCandidatePosition = addslashes( $_POST['position'] ); //prevents types of SQL injection
-    
+    $newCandidatePosition = addslashes( $_POST['position'] ); //prevents types of SQL injection  
 
     $sql = mysql_query( "INSERT INTO tbCandidates(candidate_name,candidate_position) VALUES ('$newCandidateName','$newCandidatePosition')" )
             or die("Could not insert candidate at the moment". mysql_error() );
@@ -32,22 +30,20 @@ if (isset($_POST['Submit']))
 ?>
 
 <?php
-    // deleting sql query
-    // check if the 'id' variable is set in URL
-     if (isset($_GET['id']))
-     {
-     // get id value
-     $id = $_GET['id'];
-     
-     // delete the entry
-     $result = mysql_query("DELETE FROM tbCandidates WHERE candidate_id='$id'")
-     or die("The candidate does not exist ... \n"); 
-     
-     // redirect back to candidates
-     header("Location: candidates.php");
-     }
-     else
-     // do nothing   
+  // deleting sql query
+  // check if the 'id' variable is set in URL
+   if (isset($_GET['id']))
+   {
+   // get id value
+   $id = $_GET['id'];
+   
+   // delete the entry
+   $result = mysql_query("DELETE FROM tbCandidates WHERE candidate_id='$id'")
+   or die("The candidate does not exist ... \n"); 
+   
+   // redirect back to candidates
+   header("Location: candidates.php");
+   }  
 ?>
 
 
@@ -115,51 +111,57 @@ if (isset($_POST['Submit']))
   </header>
 </div>
 
+<div id="header" class="hoc clear"></div>
+
 <div >
 <table width="380" align="center">
-<CAPTION><h3>ADD NEW CANDIDATE</h3></CAPTION>
+<CAPTION><h3 style="color: #ffffff">ADD NEW CANDIDATE</h3></CAPTION>
 <form name="fmCandidates" id="fmCandidates" action="candidates.php" method="post" onsubmit="return candidateValidate(this)">
 <tr>
-    <td bgcolor="#FAEBD7">Candidate Name</td>
-    <td bgcolor="#FAEBD7"><input type="text" name="name" /></td>
+    <td bgcolor="#5D7B9D" style="color: #ffffff">Candidate Name</td>
+    <td bgcolor="#5D7B9D" style="color: #000000"><input type="text" name="name" /></td>
 </tr>
 
 <tr>
-    <td bgcolor="#7FFFD4">Candidate Position</td>
+    <td bgcolor="#5D7B9D" style="color: #ffffff">Candidate Position</td>
     
-    <td bgcolor="#7FFFD4"><SELECT NAME="position" id="position">select
-    <OPTION VALUE="select">select
-    <?php
-        //loop through all table rows
-        while ($row=mysql_fetch_array($positions_retrieved)){
-          echo "<OPTION VALUE=$row[position_name]>$row[position_name]";
-        }
-    ?>
-    </SELECT>
+    <td bgcolor="#5D7B9D" style="color: #000000">
+      <SELECT NAME="position" id="position">select
+      <OPTION VALUE="select">Select
+        <?php
+            //loop through all table rows
+            while ($row=mysql_fetch_array($positions_retrieved)){
+              echo "<OPTION VALUE=$row[position_name]>$row[position_name]";
+            }
+        ?>
+      </SELECT>
     </td>
 </tr>
 <tr>
-    <td bgcolor="#BDB76B">&nbsp;</td>
-    <td bgcolor="#BDB76B"><input type="submit" name="Submit" value="Add" /></td>
+    <td bgcolor="#5D7B9D" >&nbsp;</td>
+    <td bgcolor="#5D7B9D" style="color: #000000"><input type="submit" name="Submit" value="Add" /></td>
 </tr>
 </table>
+
 <hr>
+
 <table border="0" width="620" align="center">
-<CAPTION><h3>AVAILABLE CANDIDATES</h3></CAPTION>
+<CAPTION><h3 style="color: #ffffff">AVAILABLE CANDIDATES</h3></CAPTION>
 <tr>
-<th>Candidate ID</th>
-<th>Candidate Name</th>
-<th>Candidate Position</th>
+<td bgcolor="#5D7B9D" style="color: #ffffff">Candidate ID</td>
+<td bgcolor="#5D7B9D" style="color: #ffffff">Candidate Name</td>
+<td bgcolor="#5D7B9D" style="color: #ffffff">Candidate Position</td>
+<td bgcolor="#5D7B9D" style="color: #ffffff"></td>
 </tr>
 
 <?php
     //loop through all table rows
     while ($row=mysql_fetch_array($result)){
     echo "<tr>";
-    echo "<td>" . $row['candidate_id']."</td>";
-    echo "<td>" . $row['candidate_name']."</td>";
-    echo "<td>" . $row['candidate_position']."</td>";
-    echo '<td><a href="candidates.php?id=' . $row['candidate_id'] . '">Delete Candidate</a></td>';
+    echo '<td style="color: #000000">' . $row['candidate_id']."</td>";
+    echo '<td style="color: #000000">' . $row['candidate_name']."</td>";
+    echo '<td style="color: #000000">' . $row['candidate_position']."</td>";
+    echo '<td style="color: #000000">'.'<a style="color: #5D7B9D" href="candidates.php?id=' . $row['candidate_id'] . '">Delete Candidate</a></td>';
     echo "</tr>";
     }
     mysql_free_result($result);
