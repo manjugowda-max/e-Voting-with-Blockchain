@@ -130,7 +130,7 @@ if (isset($_POST['Submit'])) {
   <header id="header" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <div id="logo" class="fl_left">
-      <h1><a href="index.html">ONLINE VOTING</a></h1>
+      <h1><a href="voter.php">ONLINE VOTING</a></h1>
     </div>
     <!-- ################################################################################################ -->
     <nav id="mainav" class="fl_right">

@@ -15,7 +15,7 @@
     }
     else 
     {
-       echo '<img src="e1.jpg" width="100%" height="100%"  />';  /* here goes the page when destroy the cookies */
+       echo '<img src="images/e1.jpg" width="100%" height="100%"/>';  /* here goes the page when destroy the cookies */
        exit;
     }
 ?>
@@ -89,7 +89,7 @@
 
        <li class="one_third">
 
-          <blockquote>In this page, Admin can set candidates for voting and view results.</blockquote>
+          <blockquote><p><h1>In this page, Admin can set candidates for voting and view results.</h1></p></blockquote>
         
       </li> 
 

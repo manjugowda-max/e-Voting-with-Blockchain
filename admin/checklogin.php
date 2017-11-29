@@ -37,7 +37,7 @@ if($count==1){
                 if(isset($_POST['remember']))
                 {
                     setcookie('$email',$_POST['myusername'], time()+30*24*60*60); // 30 days
-                    setcookie('$pass', $_POST['mypassword'],time()+30*24*60*60); // 30 days
+                    setcookie('$pass', $_POST['mypassword'], time()+30*24*60*60); // 30 days
                     $_SESSION['curname']=$myusername;
                     $_SESSION['curpass']=$mypassword;
 
@@ -65,7 +65,7 @@ if($count==1){
 }
 else {
     echo "<br> <br> <br> ";
-    echo "<center> <h3>Wrong Username or Password<br><br>Return to <a href=\"index.php\">login</a> </h3></center>";
+    echo "<center><h2>Wrong Username or Password</h2><br><br><h3>Return to <a href=\"index.php\"><b>Login</b></a></h3></center>";
 }
 
 ob_end_flush();

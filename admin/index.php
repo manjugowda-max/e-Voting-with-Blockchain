@@ -32,15 +32,15 @@
 
 <body>
 
-<div class="pen-title">
-  <h1>Admin Login Form</h1>
+<!-- <div class="pen-title">
+  <h1>Admin Login</h1>
 </div>
-
+ -->
 <div class="container" >
   <div class="card"></div>
 
   <div class="card">
-    <h1 class="title">Login</h1>
+    <h1 class="title">Admin Login</h1>
     <form name="form1" action="checklogin.php" method="post" onsubmit="return loginValidate(this)">
 
       <div class="input-container">
@@ -62,7 +62,7 @@
 
       </div>
       <br><br>
-    <center>Return to <a href="../index.php">Voter Panel</a></center>
+    <center>Return to <a href="../index.php"><b>Home</b></a></center>
 
     </form>
   </div>

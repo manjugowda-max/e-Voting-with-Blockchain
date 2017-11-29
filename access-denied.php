@@ -55,7 +55,7 @@
 
 	<nav id="mainav" class="fl_right">
       <ul class="clear">
-        <li class="active"><a href="access-denied.php">Home</a></li>
+        <li class="active"><a href="index.php">Home</a></li>
         
         <li><a class="drop" href="#">Voter Panel</a>
           <ul>
@@ -85,8 +85,8 @@
         
 
       	<div id="container">
-		<div class="err">Access Denied!</div>
-		  <p>You don't have access to this resource. <a href="login.php">Click here</a> to login first.</p>
+		<div class="err"><h1>Access Denied!</h1></div>
+		  <p>You don't have access to this resource. <a href="login.php"><b>Click here</b></a> to login first.</p>
 		</div>
 
 

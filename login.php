@@ -44,14 +44,14 @@
   <header id="header" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <div id="logo" class="fl_left">
-      <h1><a href="index.html">ONLINE VOTING</a></h1>
+      <h1><a href="index.php">ONLINE VOTING</a></h1>
     </div>
     <!-- ################################################################################################ -->
     <nav id="mainav" class="fl_right">
       <ul class="clear">
         <li class="active"><a href="index.php">Home</a></li>
         
-        <li><a href="logout.php">Logout</a></li>
+        <!-- <li><a href="logout.php">Logout</a></li> -->
       </ul>
     </nav>
     <!-- ################################################################################################ -->
