@@ -12,8 +12,8 @@
     
     $positions=mysql_query("SELECT * FROM tbPositions")
     or die("There are no records to display ... \n" . mysql_error()); 
-  ?>
-  <?php
+?>
+<?php
     
      if (isset($_POST['Submit']))
      {
@@ -25,9 +25,7 @@
        or die(" There are no records at the moment ... \n"); 
      
      }
-     else
-     // do something
-  
+
 ?>
 
 

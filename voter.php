@@ -86,12 +86,12 @@ if( empty($_SESSION['member_id']) ) {
     <h2 class="font-x3 uppercase btmspace-80 underlined"> Online <a href="#">Voting</a></h2>
     <ul class="nospace group">
       <li class="one_half first">
-        <blockquote> <div id="container">
-		<p> Click a link above voter pages to do some stuff.</p>
-		</div> </blockquote>
-      
+        <blockquote>
+          <div id="container">
+        		<p><h1>Welcome to Online Voting.</h1></p>
+        	</div>
+        </blockquote>
       </li>
-      
     </ul>
     <!-- ################################################################################################ -->
   </section>

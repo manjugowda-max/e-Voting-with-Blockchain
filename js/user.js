@@ -137,6 +137,11 @@ function updateProfile(registerForm){
     errorMessage+="Invalid email address provided!\n";
     validationVerified=false;
     }
+    if (!isValidVoterId(registerForm.voter_id.value)) {
+    errorMessage+="Invalid Voter Id provided!\n";
+    validationVerified=false;
+    }
+
     if(!validationVerified)
     {
     alert(errorMessage);
@@ -165,7 +170,7 @@ function isValidVoterId(val){
     // return true;
 
     var len = val.toString().length;
-    if(len === 17){
+    if(len === 11){
         return true;
     }
     return false;

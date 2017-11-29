@@ -125,7 +125,7 @@
             <br>
             <tr><td></td><td></td></tr>
             <tr>
-                <td style="color:#000000"; >Id:</td>
+                <td style="color:#000000"; >Number Id:</td>
                 <td style="color:#000000"; ><?php echo $stdId; ?></td>
             </tr>
             <tr>
@@ -159,22 +159,45 @@
             <table  border="0" width="620" align="center">
             <CAPTION><h3>UPDATE PROFILE</h3></CAPTION>
             <form action="manage-profile.php?id=<?php echo $_SESSION['member_id']; ?>" method="post" onsubmit="return updateProfile(this)">
-            <table align="center">
-            <tr><td  style="background-color:#0000ff"  >First Name:</td><td style="background-color:#0000ff"  ><input  style="color:#000000"; type="text" font-weight:bold;" name="firstname" maxlength="15" value=""></td></tr>
+              <table align="center">
+              <tr>
+                <td  style="color:#000000"  >First Name:</td>
+                <td style="color:#000000"  ><input  style="color:#000000"; type="text" font-weight:bold;" name="firstname" maxlength="15" value=""></td>
+              </tr>
 
-            <tr><td style="background-color:#bf00ff">Last Name:</td><td style="background-color:#bf00ff"><input style="color:#000000";  type="text" font-weight:bold;" name="lastname" maxlength="15" value=""></td></tr>
+              <tr>
+                <td style="color:#000000">Last Name:</td>
+                <td style="color:#000000"><input style="color:#000000";  type="text" font-weight:bold;" name="lastname" maxlength="15" value=""></td>
+              </tr>
 
-            <tr><td style="background-color:#0000ff" >Email Address:</td><td style="background-color:#0000ff"><input style="color:#000000";  type="text" font-weight:bold;" name="email" maxlength="100" value=""></td></tr>
+              <tr>
+                <td style="color:#000000" >Email Address:</td>
+                <td style="color:#000000"><input style="color:#000000";  type="text" font-weight:bold;" name="email" maxlength="100" value=""></td>
+              </tr>
 
-            <tr><td style="background-color:#bf00ff" >Voter Id:</td><td style="background-color:#bf00ff"><input  style="color:#000000";  type="text"  font-weight:bold;" name="voter_id" maxlength="100" value=""></td></tr>
+              <tr>
+                <td style="color:#000000" >Voter Id:</td>
+                <td style="color:#000000"><input  style="color:#000000";  type="text"  font-weight:bold;" name="voter_id" maxlength="100" value=""></td>
+              </tr>
 
-            <tr><td style="background-color:#0000ff" >New Password:</td><td style="background-color:#0000ff" ><input  style="color:#000000";  type="password" font-weight:bold;" name="password" maxlength="15" value=""></td></tr>
+              <tr>
+                <td style="color:#000000" >New Password:</td>
+                <td style="color:#000000" ><input  style="color:#000000";  type="password" font-weight:bold;" name="password" maxlength="15" value=""></td>
+              </tr>
 
-            <tr><td style="background-color:#bf00ff" >Confirm New Password:</td><td style="background-color:#bf00ff" ><input   style="color:#000000";  type="password"  font-weight:bold;" name="ConfirmPassword" maxlength="15" value=""></td></tr>
+              <tr>
+                <td style="color:#000000" >Confirm New Password:</td>
+                <td style="color:#000000" ><input   style="color:#000000";  type="password"  font-weight:bold;" name="ConfirmPassword" maxlength="15" value=""></td>
+              </tr>
 
-            <tr><td style="background-color:#0000ff" >&nbsp;</td></td><td style="background-color:#0000ff" ><input style="color:#ff0000";  type="submit" name="update" value="Update Profile"></td></tr>
+              <tr>
+                <td style="color:#000000" >&nbsp;</td>
+                
+                <td style="color:#000000" ><input style="color:#000000";  type="submit" name="update" value="Update Profile"></td>
 
-            </table>
+              </tr>
+
+              </table>
             </form>
             </table>
 
