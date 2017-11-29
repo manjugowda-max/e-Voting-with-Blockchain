@@ -3,6 +3,7 @@
 <body>
 
 <?php
+
 //session_start();
 ini_set ("display_errors", "1");
 error_reporting(E_ALL);
@@ -12,7 +13,6 @@ session_start();
 require('../connection.php');
 
 $tbl_name="tbAdministrators"; // Table name
-
 
 $myusername=$_POST['myusername'];
 $mypassword=$_POST['mypassword'];
@@ -34,9 +34,9 @@ $result=mysql_query($sql) or die(mysql_error());
 $count=mysql_num_rows($result);
 
 
-if($count==1){
+if($count==1) {
     // $user = mysql_fetch_assoc($result);
-    //                 $_SESSION['admin_id'] = $user['admin_id'];
+    // $_SESSION['admin_id'] = $user['admin_id'];
     
     if(isset($_POST['remember']))
     {
@@ -64,7 +64,6 @@ if($count==1){
         header("Location:admin.php");
         exit;
     }
-            
 
 }
 else {
@@ -75,7 +74,6 @@ else {
 ob_end_flush();
 
 ?> 
-
 
 </body>
 </html>
