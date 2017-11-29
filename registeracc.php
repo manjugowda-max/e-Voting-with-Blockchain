@@ -94,7 +94,7 @@
   	die( "You have registered for an account.<br><br>Go to <a href=\"login.php\">Login</a>" );
   	}
 
-  	echo "<center><h3>Register an account by filling in the needed information below:</h3></center>";
+  	echo "<center><h3>Register an account by filling in the required informations below:</h3></center>";
   	
   ?>
   

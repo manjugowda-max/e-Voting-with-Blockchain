@@ -72,16 +72,16 @@
       <li class="one_half">
         <blockquote>
 
-        		<div id="page">
-					<div id="header">
-					<h1>Logged Out Successfully </h1>
-					<p align="center">&nbsp;</p>
-					</div>
-					<?php
-						session_destroy();
-					?>
-					<br>
-					Return to <a href="login.php">Login</a>
+        	<div id="page">
+  					<div id="header">
+  					<h1>Logged Out Successfully </h1>
+  					
+  					</div>
+  					<?php
+  						session_destroy();
+  					?>
+  					<br>
+  					Return to <a href="login.php"><b>Login</b></a>
 
 				</div>
 

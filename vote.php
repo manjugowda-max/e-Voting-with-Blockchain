@@ -1,31 +1,25 @@
 <?php
-  require('connection.php');
+require('connection.php');
 
-  session_start();
-  
-  if(empty($_SESSION['member_id'])){
-    header("location:access-denied.php");
-  }
+session_start();
+
+if(empty($_SESSION['member_id'])){
+  header("location:access-denied.php");
+}
 ?>
 
 <?php
-    
-    $positions=mysql_query("SELECT * FROM tbPositions")
-    or die("There are no records to display ... \n" . mysql_error()); 
+$positions = mysql_query("SELECT * FROM tbPositions")
+or die("There are no records to display ... \n" . mysql_error()); 
 ?>
-<?php
-    
-     if (isset($_POST['Submit']))
-     {
-       
-       $position = addslashes( $_POST['position'] ); 
-       
-       
-       $result = mysql_query("SELECT * FROM tbCandidates WHERE candidate_position='$position'")
-       or die(" There are no records at the moment ... \n"); 
-     
-     }
 
+<?php
+if (isset($_POST['Submit'])) {
+  $position = addslashes( $_POST['position'] ); 
+   
+  $result = mysql_query("SELECT * FROM tbCandidates WHERE candidate_position='$position'")
+  or die(" There are no records at the moment ... \n"); 
+}
 ?>
 
 
