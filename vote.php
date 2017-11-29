@@ -35,62 +35,62 @@ if (isset($_POST['Submit'])) {
 <script language="JavaScript" src="js/user.js"></script>
 
 <script type="text/javascript">
-function getVote(int)
-{
-  if (window.XMLHttpRequest)
-  {// code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp=new XMLHttpRequest();
-  }
-  else
-  {// code for IE6, IE5
-      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-
-  if(confirm("Your vote is for "+int))
+  function getVote(int)
   {
-      xmlhttp.open("GET","save.php?vote="+int,true);
-      xmlhttp.send();
-  }
-  else
-  {
-      alert("Choose another candidate "); 
-  }
-  
-}
+    if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
 
-function getPosition(String)
-{
-  if (window.XMLHttpRequest)
-  {// code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp=new XMLHttpRequest();
-  }
-  else
-  {// code for IE6, IE5
-      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-
-  xmlhttp.open("GET","vote.php?position="+String,true);
-  xmlhttp.send();
-}
-</script>
-<script type="text/javascript">
-$(document).ready(function(){
-   var j = jQuery.noConflict();
-    j(document).ready(function()
+    if(confirm("Your vote is for "+int))
     {
-        j(".refresh").everyTime(1000,function(i){
-            j.ajax({
-              url: "admin/refresh.php",
-              cache: false,
-              success: function(html){
-                j(".refresh").html(html);
-              }
-            })
-        })
-        
-    });
-   j('.refresh').css({color:"green"});
-});
+        xmlhttp.open("GET","save.php?vote="+int,true);
+        xmlhttp.send();
+    }
+    else
+    {
+        alert("Choose another candidate "); 
+    }
+    
+  }
+
+  function getPosition(String)
+  {
+    if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    xmlhttp.open("GET","vote.php?position="+String,true);
+    xmlhttp.send();
+  }
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    var j = jQuery.noConflict();
+    j(document).ready(function() {
+          j(".refresh").everyTime(1000,function(i){
+              j.ajax({
+                url: "admin/refresh.php",
+                cache: false,
+                success: function(html){
+                  j(".refresh").html(html);
+                }
+              })
+          })
+          
+      });
+     j('.refresh').css({color:"green"});
+  });
 </script>
 
 
@@ -153,13 +153,13 @@ $(document).ready(function(){
     <h2 class="font-x3 uppercase btmspace-80 underlined"> Online <a href="#">Voting</a></h2>
     <ul class="nospace group">
 
-            <div >
+        <div>
             <table bgcolor="#00FF00" width="420" align="center">
             <form name="fmNames" id="fmNames" method="post" action="vote.php" onSubmit="return positionValidate(this)">
             <tr>
                 <td bgcolor="#5D7B9D" >Choose Position</td>
                 <td bgcolor="#5D7B9D" style="color:#000000"; ><SELECT NAME="position" id="position" onclick="getPosition(this.value)">
-                <OPTION  VALUE="select">select
+                <OPTION  VALUE="select">Select
                 <?php 
                   //loop through all table rows
                   while ($row=mysql_fetch_array($positions)){
@@ -167,14 +167,15 @@ $(document).ready(function(){
                   }
                 ?>
                 </SELECT></td>
-                <td bgcolor="#5D7B9D" ><input style="color:#ff0000";  type="submit" name="Submit" value="See Candidates" /></td>
+                <td bgcolor="#5D7B9D" ><input style="color:#000000";  type="submit" name="Submit" value="See Candidates" /></td>
             </tr>
+
             <tr>
-               
             </tr>
             </form> 
             </table>
-            <table width="270" align="center">
+
+            <table bgcolor="#00FF00" width="270" align="center">
             <form>
             <tr>
                 <th>Candidates:</th>
@@ -199,12 +200,12 @@ $(document).ready(function(){
             ?>
 
             <tr>
-                <h4>NB: Click a circle under a respective candidate to cast your vote. You can't vote more than once in a respective position. This process can not be undone so think wisely before casting your vote.</h4>
+                <p><b>NB:</b> Click a circle under a respective candidate to cast your vote. You can't vote more than once in a respective position. This process can not be undone so think wisely before casting your vote.</p>
                 
             </tr>
             </form>
             </table>
-            </div>
+        </div>
 
 
     </ul>
