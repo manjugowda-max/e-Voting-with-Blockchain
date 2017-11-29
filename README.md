@@ -11,6 +11,6 @@ import poll.sql file from phpmyadmin
 
 URL:		localhost/e-voting-with-blockchain/admin
 
-USER NAME:	admin@gmail.com
+USER NAME:	admin@admin.com
 
 PASSWORD:	admin
