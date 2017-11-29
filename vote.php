@@ -178,8 +178,10 @@ if (isset($_POST['Submit'])) {
             <table bgcolor="#00FF00" width="270" align="center">
             <form>
             <tr>
-                <th>Candidates:</th>
+                <td bgcolor="#5D7B9D">Candidates:</td>
+                <td bgcolor="#5D7B9D"></td>
             </tr>
+
             <?php
               
                 if (isset($_POST['Submit']))
@@ -187,21 +189,18 @@ if (isset($_POST['Submit'])) {
                   while ($row=mysql_fetch_array($result)){
                     
                       echo "<tr>";
-                      echo "<td style='background-color:#bf00ff'>" . $row['candidate_name']."</td>";
-                      echo "<td style='background-color:#bf00ff'><input type='radio' name='vote' value='$row[candidate_name]' onclick='getVote(this.value)' /></td>";
+                      echo "<td style='background-color:#5D7B9D'>" . $row['candidate_name']."</td>";
+                      echo "<td style='background-color:#5D7B9D'><input type='radio' name='vote' value='$row[candidate_name]' onclick='getVote(this.value)' /></td>";
                       echo "</tr>";
                   }
                   mysql_free_result($result);
                   mysql_close($link);
               //}
                 }
-                else
-              // do nothing
             ?>
 
             <tr>
                 <p><b>NB:</b> Click a circle under a respective candidate to cast your vote. You can't vote more than once in a respective position. This process can not be undone so think wisely before casting your vote.</p>
-                
             </tr>
             </form>
             </table>
