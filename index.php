@@ -15,10 +15,10 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row0">
-  <div id="topbar" class="hoc clear"> 
+<!-- <div class="wrapper row0">
+  <div id="topbar" class="hoc clear">  -->
     <!-- ################################################################################################ -->
-    <div class="fl_left">
+<!--     <div class="fl_left">
       <ul class="faico clear">
         <li><a class="faicon-facebook" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
         <li><a class="faicon-pinterest" href="https://uk.pinterest.com/"><i class="fa fa-pinterest"></i></a></li>
@@ -34,10 +34,10 @@
         <li><i class="fa fa-phone"></i> +880 1670115309</li>
         <li><i class="fa fa-envelope-o"></i> sreejon07@gmail.com </li>
       </ul>
-    </div>
+    </div> -->
     <!-- ################################################################################################ -->
-  </div>
-</div>
+<!--   </div>
+</div> -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -142,8 +142,10 @@
 <div class="wrapper row5">
   <div id="copyright" class="hoc clear"> 
     <!-- ################################################################################################ -->
-    <p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="#">Mahmudul Hasan</a></p>
-    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <center>
+    	<p>Copyright &copy; 2017 - All Rights Reserved - <i>Mahmudul Hasan</i></p>
+	</center>
+<!--     <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p> -->
     <!-- ################################################################################################ -->
   </div>
 </div>
