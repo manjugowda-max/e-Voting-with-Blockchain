@@ -70,15 +70,14 @@ header("Location: positions.php");
     <div id="logo" class="fl_left">
       <h1><a href="admin.php">ONLINE VOTING</a></h1>
     </div>
-    
     <nav id="mainav" class="fl_right">
       <ul class="clear">
         <li class="active"><a href="admin.php">Home</a></li>
-        <li><a class="drop" href="#">Admin Panel Pages</a>
+        <li><a class="drop" href="#">Admin Panel</a>
           <ul>
-            <li><a href="manage-admins.php">Manage Admin</a></li>
-            <li><a href="positions.php">Manage Positions</a></li>
-            <li><a href="candidates.php">Manage Candidates</a></li>
+            <li><a href="manage-admins.php">Admin Manager</a></li>
+            <li><a href="positions.php">Manage Parties</a></li>
+            <li><a href="candidates.php">Manage Members</a></li>
             <li><a href="refresh.php">Results</a></li>
           </ul>
         </li>
@@ -91,42 +90,42 @@ header("Location: positions.php");
 
 <div id="header" class="hoc clear"></div>
 
-<div >
+<div>
 	<table width="380" align="center">
-	<CAPTION><h3 style="color: #ffffff">ADD NEW POSITION</h3></CAPTION>
+	<CAPTION><h3 style="color: #ffffff">ADD NEW PARTY</h3></CAPTION>
 	<form name="fmPositions" id="fmPositions" action="positions.php" method="post" onsubmit="return positionValidate(this)">
 	<tr>
-	    <td bgcolor="#5D7B9D" style="color: #ffffff">Position Name</td>
+	    <td bgcolor="#5D7B9D" style="color: #ffffff">Party Name</td>
 	    <td bgcolor="#5D7B9D" style="color: #000000"><input type="text" name="position" /></td>
 	    <td bgcolor="#5D7B9D" style="color: #000000"><input type="submit" name="Submit" value="Add" /></td>
 	</tr>
 	</table>
 
 	<table border="0" width="420" align="center">
-		<CAPTION><h3 style="color: #ffffff">AVAILABLE POSITIONS</h3></CAPTION>
+		<CAPTION><h3 style="color: #ffffff">AVAILABLE PARTIES</h3></CAPTION>
 		<tr bgcolor="#5D7B9D">
-		  <td bgcolor="#5D7B9D" style="color: #ffffff">Position ID</td>
-		  <td bgcolor="#5D7B9D" style="color: #ffffff">Position Name</td>
+		  <td bgcolor="#5D7B9D" style="color: #ffffff">Party ID</td>
+		  <td bgcolor="#5D7B9D" style="color: #ffffff">Party Name</td>
       <td bgcolor="#5D7B9D"></td>
 		</tr>
 
 		<?php
 
 		//loop through all table rows
-		while ($row=mysql_fetch_array($result)){
-		echo "<tr>";
-		echo '<td style="color: #000000">' . $row['position_id']."</td>";
-		echo '<td style="color: #000000">' . $row['position_name']."</td>";
-		echo '<td style="color: #000000">'.'<a style="color: #5D7B9D" href="positions.php?id=' . $row['position_id'] . '">Delete Position</a></td>';
-		echo "</tr>";
+		while ($row=mysql_fetch_array($result)) {
+			echo "<tr>";
+			echo '<td style="color: #000000">' . $row['position_id']."</td>";
+			echo '<td style="color: #000000">' . $row['position_name']."</td>";
+			echo '<td style="color: #000000">'.'<a style="color: #5D7B9D" href="positions.php?id=' . $row['position_id'] . '"><b>Delete Party</b></a></td>';
+			echo "</tr>";
 		}
+
 		mysql_free_result($result);
 		mysql_close($link);
 
 		?>
 
 	</table>
-	<hr>
 </div>
 
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>

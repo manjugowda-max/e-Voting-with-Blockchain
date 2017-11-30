@@ -65,15 +65,14 @@ if(isset($_POST['Submit'])) {
     <div id="logo" class="fl_left">
       <h1><a href="admin.php">ONLINE VOTING</a></h1>
     </div>
-    
     <nav id="mainav" class="fl_right">
       <ul class="clear">
         <li class="active"><a href="admin.php">Home</a></li>
-        <li><a class="drop" href="#">Admin Panel Pages</a>
+        <li><a class="drop" href="#">Admin Panel</a>
           <ul>
-            <li><a href="manage-admins.php">Manage Admin</a></li>
-            <li><a href="positions.php">Manage Positions</a></li>
-            <li><a href="candidates.php">Manage Candidates</a></li>
+            <li><a href="manage-admins.php">Admin Manager</a></li>
+            <li><a href="positions.php">Manage Parties</a></li>
+            <li><a href="candidates.php">Manage Members</a></li>
             <li><a href="refresh.php">Results</a></li>
           </ul>
         </li>
@@ -91,7 +90,7 @@ if(isset($_POST['Submit'])) {
     <table width="420" align="center">
       <form name="fmNames" id="fmNames" method="post" action="refresh.php" onSubmit="return positionValidate(this)">
         <tr>
-          <td bgcolor="#5D7B9D" style="color:#ffffff">Choose Position</td>
+          <td bgcolor="#5D7B9D" style="color:#ffffff">Choose Party</td>
           <td bgcolor="#5D7B9D" style="color:#000000">
             <SELECT NAME="position" id="position">
               <OPTION  VALUE="select"><p style="color:black";>Select</p>

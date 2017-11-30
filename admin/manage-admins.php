@@ -28,15 +28,14 @@ if(empty($_SESSION['admin_id']) ){
     <div id="logo" class="fl_left">
       <h1><a href="admin.php">ONLINE VOTING</a></h1>
     </div>
-   
     <nav id="mainav" class="fl_right">
       <ul class="clear">
         <li class="active"><a href="admin.php">Home</a></li>
-        <li><a class="drop" href="#">Admin Panel Pages</a>
+        <li><a class="drop" href="#">Admin Panel</a>
           <ul>
-            <li><a href="manage-admins.php">Manage Admin</a></li>
-            <li><a href="positions.php">Manage Positions</a></li>
-            <li><a href="candidates.php">Manage Candidates</a></li>
+            <li><a href="manage-admins.php">Admin Manager</a></li>
+            <li><a href="positions.php">Manage Parties</a></li>
+            <li><a href="candidates.php">Manage Members</a></li>
             <li><a href="refresh.php">Results</a></li>
           </ul>
         </li>
@@ -61,49 +60,47 @@ if(empty($_SESSION['admin_id']) ){
           <blockquote>
             <p><h1>
 
-      <?php
-				//If your session isn't valid, it returns you to the login screen for protection
-				if(empty($_SESSION['admin_id'])){
-				 	header("location:access-denied.php");
-				}
-				//Process
-				if (isset($_POST['submit']))
-				{
+    <?php
 
-					$myFirstName = addslashes( $_POST['firstname'] ); //prevents types of SQL injection
-					$myLastName = addslashes( $_POST['lastname'] ); //prevents types of SQL injection
-					$myEmail = $_POST['email'];
-					$myPassword = $_POST['password'];
+	//If your session isn't valid, it returns you to the login screen for protection
+	if(empty($_SESSION['admin_id'])){
+	 	header("location:access-denied.php");
+	}
+	//Process
+	if (isset($_POST['submit'])) {
+		$myFirstName = addslashes( $_POST['firstname'] ); //prevents types of SQL injection
+		$myLastName = addslashes( $_POST['lastname'] ); //prevents types of SQL injection
+		$myEmail = $_POST['email'];
+		$myPassword = $_POST['password'];
 
-					$newpass = md5($myPassword); //This will make your password encrypted into md5, a high security hash
+		$newpass = md5($myPassword); //This will make your password encrypted into md5, a high security hash
 
-          $sql = mysql_query( "INSERT INTO tbAdministrators(first_name, last_name, email, password) VALUES ('$myFirstName','$myLastName', '$myEmail', '$myPassword')" )
-                  or die( mysql_error() );
+      	$sql = mysql_query( "INSERT INTO tbAdministrators(first_name, last_name, email, password) VALUES ('$myFirstName','$myLastName', '$myEmail', '$myPassword')" ) or die( mysql_error() );
 
 /*					$sql = mysql_query( "INSERT INTO tbAdministrators(first_name, last_name, email, password) VALUES ('$myFirstName','$myLastName', '$myEmail', '$newpass')" )
 					        or die( mysql_error() );*/
 
-					die( "A new administrator account has been created." );
-				}
-				//Process
-				if (isset($_GET['id']) && isset($_POST['update']))
-				{
-					$myId = addslashes( $_GET['id']);
-					$myFirstName = addslashes( $_POST['firstname'] ); //prevents types of SQL injection
-					$myLastName = addslashes( $_POST['lastname'] ); //prevents types of SQL injection
-					$myEmail = $_POST['email'];
-					$myPassword = $_POST['password'];
+		die( "A new administrator account has been created." );
+	}
+	//Process
+	if (isset($_GET['id']) && isset($_POST['update'])) {
+		$myId = addslashes( $_GET['id']);
+		$myFirstName = addslashes( $_POST['firstname'] ); //prevents types of SQL injection
+		$myLastName = addslashes( $_POST['lastname'] ); //prevents types of SQL injection
+		$myEmail = $_POST['email'];
+		$myPassword = $_POST['password'];
 
-					$newpass = md5($myPassword); //This will make your password encrypted into md5, a high security hash
+		$newpass = md5($myPassword); //This will make your password encrypted into md5, a high security hash
 
 /*					$sql = mysql_query( "UPDATE tbAdministrators SET first_name='$myFirstName', last_name='$myLastName', email='$myEmail', password='$newpass' WHERE admin_id = '$myId'" )
 					        or die( mysql_error() );*/
 
-          $sql = mysql_query( "UPDATE tbAdministrators SET first_name='$myFirstName', last_name='$myLastName', email='$myEmail', password='$myPassword' WHERE admin_id = '$myId'" ) or die( mysql_error() );
+      	$sql = mysql_query( "UPDATE tbAdministrators SET first_name='$myFirstName', last_name='$myLastName', email='$myEmail', password='$myPassword' WHERE admin_id = '$myId'" ) or die( mysql_error() );
 
-					die( "Your account has been updated." );
-				}
-			?>
+		die( "Your account has been updated." );
+	}
+
+	?>
 
         </h1></p>
       </blockquote>
