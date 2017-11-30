@@ -1,50 +1,54 @@
 <?php
-  session_start();
-  require('connection.php');
 
-  //If your session isn't valid, it returns you to the login screen for protection
-  if(empty($_SESSION['member_id'])){
-    header("location:access-denied.php");
-  } 
-  //retrive voter details from the tbmembers table
-  $result=mysql_query("SELECT * FROM tbMembers WHERE member_id = '$_SESSION[member_id]'")
-  or die("There are no records to display ... \n" . mysql_error()); 
-  if (mysql_num_rows($result)<1){
-      $result = null;
-  }
-  $row = mysql_fetch_array($result);
-  if($row)
-   {
-       // get data from db
-       $stdId = $row['member_id'];
-       $firstName = $row['first_name'];
-       $lastName = $row['last_name'];
-       $email = $row['email'];
-       $voter_id = $row['voter_id'];
-   }
+session_start();
+require('connection.php');
+
+//If your session isn't valid, it returns you to the login screen for protection
+if(empty($_SESSION['member_id'])){
+  header("location:access-denied.php");
+} 
+
+//retrive voter details from the tbmembers table
+$result=mysql_query("SELECT * FROM tbMembers WHERE member_id = '$_SESSION[member_id]'")
+or die("There are no records to display ... \n" . mysql_error()); 
+if (mysql_num_rows($result)<1){
+    $result = null;
+}
+
+$row = mysql_fetch_array($result);
+if($row) {
+     // get data from db
+     $stdId = $row['member_id'];
+     $firstName = $row['first_name'];
+     $lastName = $row['last_name'];
+     $email = $row['email'];
+     $voter_id = $row['voter_id'];
+ }
+
 ?>
 
 <?php
     // updating sql query
-    if (isset($_POST['update'])){
-        $myId = addslashes( $_GET[id]);
-        $myFirstName = addslashes( $_POST['firstname'] ); //prevents types of SQL injection
-        $myLastName = addslashes( $_POST['lastname'] ); //prevents types of SQL injection
-        $myEmail = $_POST['email'];
-        $myPassword = $_POST['password'];
-        $myVoterid = $_POST['voter_id'];
+if (isset($_POST['update'])) {
+  $myId = addslashes( $_GET[id]);
+  $myFirstName = addslashes( $_POST['firstname'] ); //prevents types of SQL injection
+  $myLastName = addslashes( $_POST['lastname'] ); //prevents types of SQL injection
+  $myEmail = $_POST['email'];
+  $myPassword = $_POST['password'];
+  $myVoterid = $_POST['voter_id'];
 
-        $newpass = md5($myPassword); //This will make your password encrypted into md5, a high security hash
+  $newpass = md5($myPassword); //This will make your password encrypted into md5, a high security hash
 
 /*        $sql = mysql_query( "UPDATE tbMembers SET first_name='$myFirstName', last_name='$myLastName', email='$myEmail', voter_id = '$myVoterid', password='$newpass' WHERE member_id = '$myId'" )
-                or die( mysql_error() );*/
+          or die( mysql_error() );*/
 
-        $sql = mysql_query( "UPDATE tbMembers SET first_name='$myFirstName', last_name='$myLastName', email='$myEmail', voter_id = '$myVoterid', password='$myPassword' WHERE member_id = '$myId'" )
-                or die( mysql_error() );
+  $sql = mysql_query( "UPDATE tbMembers SET first_name='$myFirstName', last_name='$myLastName', email='$myEmail', voter_id = '$myVoterid', password='$myPassword' WHERE member_id = '$myId'" )
+          or die( mysql_error() );
 
-        // redirect back to profile
-         header("Location: manage-profile.php");
-    }
+  // redirect back to profile
+  header("Location: manage-profile.php");
+}
+
 ?>
 
 
@@ -85,7 +89,15 @@
             <CAPTION><h3>MY PROFILE</h3></CAPTION>
             <form>
             <br>
-            <tr><td></td><td></td></tr>
+
+            <tr>
+              <td colspan="2" align="center">
+                <a href="#">
+                  <img src="images/demo/default-avatar.jpg" style="border:1px solid grey; width:200px; height:200px;" >
+                </a>
+              </td>
+            </tr>
+
             <tr>
                 <td style="color:#000000"; >Number Id:</td>
                 <td style="color:#000000"; ><?php echo $stdId; ?></td>
@@ -122,6 +134,21 @@
             <CAPTION><h3>UPDATE PROFILE</h3></CAPTION>
             <form action="manage-profile.php?id=<?php echo $_SESSION['member_id']; ?>" method="post" onsubmit="return updateProfile(this)">
               <table align="center">
+              
+
+              <tr>
+              <!-- <td></td> -->
+
+              <td colspan="2" align="center">
+                <a href="../e-voting-with-blockchain/camera/webcam.php">
+                  <img src="images/demo/default-avatar.jpg" style="border:1px solid grey; width:200px; height:200px;" >
+                </a>
+              </td>
+
+              <!-- <td></td> -->
+              </tr>
+
+
               <tr>
                 <td  style="color:#000000"  >First Name:</td>
                 <td style="color:#000000"  ><input  style="color:#000000"; type="text" font-weight:bold;" name="firstname" maxlength="15" value=""></td>

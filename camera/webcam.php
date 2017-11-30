@@ -30,7 +30,7 @@
 	    <button id="take_snapshots" class="btn btn-success btn-sm">Take Snapshot</button>
 	    <br>
 	    <br>
-	    <a href="#" class="btn btn-success btn-sm">Go Back</a>
+	    <a href="../manage-profile.php" class="btn btn-success btn-sm">Go Back</a>
 	      </div>
 	        </div>
 
