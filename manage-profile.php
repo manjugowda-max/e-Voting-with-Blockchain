@@ -4,18 +4,19 @@ session_start();
 require('connection.php');
 
 //If your session isn't valid, it returns you to the login screen for protection
-if(empty($_SESSION['member_id'])){
+if(empty($_SESSION['member_id'])) {
   header("location:access-denied.php");
 } 
 
 //retrive voter details from the tbmembers table
 $result=mysql_query("SELECT * FROM tbMembers WHERE member_id = '$_SESSION[member_id]'")
 or die("There are no records to display ... \n" . mysql_error()); 
+
 if (mysql_num_rows($result)<1){
     $result = null;
 }
 
-$row = mysql_fetch_array($result);
+$row = mysql_fetch_array( $result );
 if($row) {
      // get data from db
      $stdId = $row['member_id'];
@@ -23,6 +24,14 @@ if($row) {
      $lastName = $row['last_name'];
      $email = $row['email'];
      $voter_id = $row['voter_id'];
+     $image = $row['image'];
+
+     if( empty( $image ) ) {
+     	$image = "images/demo/default-avatar.jpg";
+     }
+     else {
+     	$image = "e-voting-with-blockchain/".$image;
+     }
  }
 
 ?>
@@ -80,7 +89,6 @@ if (isset($_POST['update'])) {
     <nav id="mainav" class="fl_right">
       <ul class="clear">
         <li class="active"><a href="voter.php">Home</a></li>
-        
         <li><a href="logout.php">Logout</a></li>
       </ul>
     </nav>
@@ -100,14 +108,14 @@ if (isset($_POST['update'])) {
 
             <tr>
               <td colspan="2" align="center">
-                <a href="#">
-                  <img src="images/demo/default-avatar.jpg" style="border:1px solid grey; width:200px; height:200px;" >
+                <a href="<?php echo $image; ?>">
+                  <img src="<?php echo $image; ?>" style="border:1px solid grey; width:200px; height:200px;" >
                 </a>
               </td>
             </tr>
 
             <tr>
-                <td style="color:#000000"; >Number Id:</td>
+                <td style="color:#000000"; >Number ID:</td>
                 <td style="color:#000000"; ><?php echo $stdId; ?></td>
             </tr>
             <tr>
@@ -123,7 +131,7 @@ if (isset($_POST['update'])) {
                 <td style="color:#000000"; ><?php echo $email; ?></td>
             </tr>
             <tr>
-                <td style="color:#000000"; >Voter Id:</td>
+                <td style="color:#000000"; >Voter ID:</td>
                 <td style="color:#000000"; ><?php echo $voter_id; ?></td>
             </tr>
             <tr>
@@ -155,8 +163,8 @@ if (isset($_POST['update'])) {
               </tr>
 
               <tr>
-                <td  style="color:#000000"  >First Name:</td>
-                <td style="color:#000000"  ><input  style="color:#000000"; type="text" font-weight:bold;" name="firstname" maxlength="15" value=""></td>
+                <td style="color:#000000" >First Name:</td>
+                <td style="color:#000000" ><input  style="color:#000000"; type="text" font-weight:bold;" name="firstname" maxlength="15" value=""></td>
               </tr>
 
               <tr>
@@ -170,7 +178,7 @@ if (isset($_POST['update'])) {
               </tr>
 
               <tr>
-                <td style="color:#000000" >Voter Id:</td>
+                <td style="color:#000000" >Voter ID:</td>
                 <td style="color:#000000"><input  style="color:#000000";  type="text"  font-weight:bold;" name="voter_id" maxlength="100" value=""></td>
               </tr>
 
@@ -186,9 +194,7 @@ if (isset($_POST['update'])) {
 
               <tr>
                 <td style="color:#000000" >&nbsp;</td>
-                
                 <td style="color:#000000" ><input style="color:#000000";  type="submit" name="update" value="Update Profile"></td>
-
               </tr>
 
               </table>

@@ -76,13 +76,13 @@
 	</tr>
 
 	<tr>
-	<td style="color:#000000"; width="150" >Email</td>
+	<td style="color:#000000"; width="180" >Email</td>
 	<td style="color:#000000"; width="6">:</td>
 	<td style="color:#000000"; width="294"><input name="email" type="text" ></td>
 	</tr>
 
 	<tr>
-	<td style="color:#000000"; width="120" >Voter Id</td>
+	<td style="color:#000000"; width="120" >Voter ID</td>
 	<td style="color:#000000"; width="6">:</td>
 	<td style="color:#000000"; width="294"><input name="voter_id" type="text" ></td>
 	</tr>

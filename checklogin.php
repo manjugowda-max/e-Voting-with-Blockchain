@@ -69,7 +69,7 @@
 
 			/*$sql="SELECT * FROM tbmembers WHERE email='$myusername' and password='$encrypted_mypassword'" or die(mysql_error());*/
 
-      $sql="SELECT * FROM tbmembers WHERE email='$myusername' and password='$mypassword'" or die(mysql_error());
+      		$sql = "SELECT * FROM tbmembers WHERE email='$myusername' and password='$mypassword'" or die(mysql_error());
 			$result=mysql_query($sql) or die(mysql_error());
 
 			// Checking table row
@@ -79,7 +79,10 @@
 			if($count==1){
 				// If everything checks out, you will now be forwarded to voter.php
 				$user = mysql_fetch_assoc($result);
+
 				$_SESSION['member_id'] = $user['member_id'];
+				$_SESSION['voter_id'] = $user['voter_id'];
+				
 				header("location:voter.php");
 			}
 			//If the username or password is wrong, you will receive this message below.

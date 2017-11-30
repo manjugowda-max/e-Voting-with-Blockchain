@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once( dirname( __FILE__ ) . '/connectionClass.php' );
 
 class webcamClass extends connectionClass {
@@ -8,7 +10,11 @@ class webcamClass extends connectionClass {
     
     // This function will create a new name for every image captured using the current data and time.
     private function getNameWithPath() {
-        $name = $this->imageFolder.date('YmdHis').".jpg";
+        $voter_id = $_SESSION['voter_id'];
+
+        $name = $this->imageFolder.(string)$voter_id.".jpg";
+
+        /*$name = $this->imageFolder.date('YmdHis').".jpg";*/
         return $name;
     }
     
@@ -40,8 +46,13 @@ class webcamClass extends connectionClass {
         //if you want to go for base64 encode than enable this line
 //        $image=  $this->changeImagetoBase64($image);          
         if($image) {
-            $query="Insert into snapshot (Image) values('$image')";
-            $result= $this->query($query);
+            $myID = $_SESSION['member_id'];
+            $query = "UPDATE tbmembers SET image='$image' WHERE member_id='$myID'";
+            /*$query = "Insert into tbmembers (image) values('$image') where member_id=''";*/
+
+            /*$query = "Insert into snapshot (Image) values('$image')";*/
+
+            $result = $this->query($query);
             if($result) {
                 return "Image saved to database";
             }
