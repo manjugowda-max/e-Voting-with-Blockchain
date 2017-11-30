@@ -60,6 +60,14 @@ if (isset($_POST['update'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
   <script language="JavaScript" src="js/user.js"></script>
+  <style>
+    #camera {
+      /*width: 100%;
+      height: 350px;*/
+      width:200px;
+      height:200px;
+    }
+  </style>
 </head>
 
 <body id="top">
@@ -137,15 +145,20 @@ if (isset($_POST['update'])) {
               
 
               <tr>
-              <!-- <td></td> -->
 
-              <td colspan="2" align="center">
-                <a href="../e-voting-with-blockchain/camera/webcam.php">
-                  <img src="images/demo/default-avatar.jpg" style="border:1px solid grey; width:200px; height:200px;" >
-                </a>
-              </td>
+                <td colspan="2" align="center">
+                  <div id="camera"></div>
+                  <br>
 
-              <!-- <td></td> -->
+                  <input style="color:#000000" id="take_snapshots" type="button" name="image" value="Take Snapshot">
+
+                 <!--  <button id="take_snapshots" type="botton" style="color:#000000" name="image">Take Snapshots</button> -->
+                  <!-- <a href="../e-voting-with-blockchain/camera/webcam.php">
+                    <img src="images/demo/default-avatar.jpg" style="border:1px solid grey; width:200px; height:200px;" >
+                  </a> -->
+
+                </td>
+
               </tr>
 
 
@@ -206,5 +219,31 @@ if (isset($_POST['update'])) {
 <!-- IE9 Placeholder Support -->
 <script src="layout/scripts/jquery.placeholder.min.js"></script>
 <!-- / IE9 Placeholder Support -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="../e-voting-with-blockchain/camera/jpeg_camera/jpeg_camera_with_dependencies.min.js" type="text/javascript"></script>
+<script>
+    var options = {
+      shutter_ogg_url: "../e-voting-with-blockchain/camera/jpeg_camera/shutter.ogg",
+      shutter_mp3_url: "../e-voting-with-blockchain/camera/jpeg_camera/shutter.mp3",
+      swf_url: "../e-voting-with-blockchain/camera/jpeg_camera/jpeg_camera.swf",
+    };
+    var camera = new JpegCamera("#camera", options);
+  
+  $('#take_snapshots').click(function(){
+    var snapshot = camera.capture();
+    snapshot.show();
+    
+    snapshot.upload({api_url: "../e-voting-with-blockchain/camera/action.php"}).done(function(response) {
+$('#imagelist').prepend("<tr><td><img src='"+response+"' width='100px' height='100px'></td><td>"+response+"</td></tr>");
+}).fail(function(response) {
+  alert("Upload failed with status " + response);
+});
+})
+
+function done(){
+    $('#snapshots').html("uploaded");
+}
+</script>
+<!-- Camera Scripts -->
 </body>
 </html>

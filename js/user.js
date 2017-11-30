@@ -98,6 +98,12 @@ function updateProfile(registerForm){
     var errorMessage="";
     var okayMessage="click OK to update your account";
 
+/*    if (registerForm.image.value=="")
+    {
+    errorMessage+="No Image Found!\n";
+    validationVerified=false;
+    }*/
+
     if (registerForm.firstname.value=="")
     {
     errorMessage+="Firstname not filled!\n";

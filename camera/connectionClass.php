@@ -1,5 +1,7 @@
 <?php
-class connectionClass extends mysqli{
+
+class connectionClass extends mysqli {
+	
     public $host="localhost",$dbname="webcam",$dbpass="",$dbuser="root";
     public $con;
     
@@ -10,4 +12,5 @@ class connectionClass extends mysqli{
             return "<h1>Error while connecting database</h1>";
         }
     }
+
 }

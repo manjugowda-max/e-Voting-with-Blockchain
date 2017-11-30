@@ -25,13 +25,13 @@
 	<!--         <div class="row">Tutorial at <a href="http://www.vivekmoyal.in/how-to-use-webcam-in-php-using-html5-and-save-image-to-database/">www.vivekmoyal.in</a></div> -->
 	        <div class="col-md-6">
 	            <div class="text-center">
-	        <div id="camera_info"></div>
-	    <div id="camera"></div><br>
-	    <button id="take_snapshots" class="btn btn-success btn-sm">Take Snapshot</button>
-	    <br>
-	    <br>
-	    <a href="../manage-profile.php" class="btn btn-success btn-sm">Go Back</a>
-	      </div>
+			        <div id="camera_info"></div>
+			    	<div id="camera"></div><br>
+			    	<button id="take_snapshots" class="btn btn-success btn-sm">Take Snapshot</button>
+				    <br>
+				    <br>
+				    <a href="../manage-profile.php" class="btn btn-success btn-sm">Go Back</a>
+			    </div>
 	        </div>
 
 <!-- 	        <div class="col-md-6">
