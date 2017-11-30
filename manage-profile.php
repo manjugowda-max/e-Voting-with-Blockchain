@@ -141,26 +141,18 @@ if (isset($_POST['update'])) {
             <table  border="0" width="620" align="center">
             <CAPTION><h3>UPDATE PROFILE</h3></CAPTION>
             <form action="manage-profile.php?id=<?php echo $_SESSION['member_id']; ?>" method="post" onsubmit="return updateProfile(this)">
+
               <table align="center">
               
-
               <tr>
 
                 <td colspan="2" align="center">
                   <div id="camera"></div>
                   <br>
-
                   <input style="color:#000000" id="take_snapshots" type="button" name="image" value="Take Snapshot">
-
-                 <!--  <button id="take_snapshots" type="botton" style="color:#000000" name="image">Take Snapshots</button> -->
-                  <!-- <a href="../e-voting-with-blockchain/camera/webcam.php">
-                    <img src="images/demo/default-avatar.jpg" style="border:1px solid grey; width:200px; height:200px;" >
-                  </a> -->
-
                 </td>
 
               </tr>
-
 
               <tr>
                 <td  style="color:#000000"  >First Name:</td>

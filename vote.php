@@ -123,7 +123,7 @@ if (isset($_POST['Submit'])) {
             <table bgcolor="#00FF00" width="420" align="center">
             <form name="fmNames" id="fmNames" method="post" action="vote.php" onSubmit="return positionValidate(this)">
             <tr>
-                <td bgcolor="#5D7B9D" >Choose Position</td>
+                <td bgcolor="#5D7B9D" >Choose Party</td>
                 <td bgcolor="#5D7B9D" style="color:#000000"; ><SELECT NAME="position" id="position" onclick="getPosition(this.value)">
                 <OPTION  VALUE="select">Select
                 <?php 
@@ -165,7 +165,7 @@ if (isset($_POST['Submit'])) {
             ?>
 
             <tr>
-                <p><b>NB:</b> Click a circle under a respective candidate to cast your vote. You can't vote more than once in a respective position. This process can not be undone so think wisely before casting your vote.</p>
+                <p><b>NB:</b> Click a circle under a respective candidate to cast your vote. You can't vote more than once. This process can not be undone so think wisely before casting your vote.</p>
             </tr>
             </form>
             </table>
