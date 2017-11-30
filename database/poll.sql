@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2017 at 06:34 PM
+-- Generation Time: Nov 30, 2017 at 07:08 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -39,8 +39,8 @@ CREATE TABLE `tbadministrators` (
 --
 
 INSERT INTO `tbadministrators` (`admin_id`, `first_name`, `last_name`, `email`, `password`) VALUES
-(1, 'Md. Rezwanul', 'Haque', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3'),
-(2, 'Mahmudul', 'Hasan', 'sreejon07@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b');
+(1, 'Mahmudul', 'Hasan', 'admin@admin.com', 'admin'),
+(2, 'mad', 'man', 'king@kill.com', '1');
 
 -- --------------------------------------------------------
 
@@ -155,12 +155,12 @@ ALTER TABLE `tbcandidates`
 -- AUTO_INCREMENT for table `tbmembers`
 --
 ALTER TABLE `tbmembers`
-  MODIFY `member_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `member_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tbpositions`
 --
 ALTER TABLE `tbpositions`
-  MODIFY `position_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `position_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
