@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2017 at 08:56 PM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Generation Time: Dec 01, 2017 at 08:38 AM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -39,9 +41,8 @@ CREATE TABLE `tbadministrators` (
 --
 
 INSERT INTO `tbadministrators` (`admin_id`, `first_name`, `last_name`, `email`, `password`) VALUES
-(1, 'Mahmudul', 'Hasan', 'admin@admin.com', 'admin'),
-(3, 'Mehedi', 'Hasan', 'admin@admin.com', '1'),
-(4, 'Mehedi', 'Hasan', 'admin@admin.com', 'admin');
+(1, 'Mahmudul', 'Hasan', 'admin1@admin.com', 'admin'),
+(2, 'Mehedi', 'Hasan', 'admin2@admin.com', 'admin');
 
 -- --------------------------------------------------------
 
@@ -61,13 +62,13 @@ CREATE TABLE `tbcandidates` (
 --
 
 INSERT INTO `tbcandidates` (`candidate_id`, `candidate_name`, `candidate_position`, `candidate_cvotes`) VALUES
-(11, 'Messi', 'FC-Barcelona', 2),
-(12, 'Ronaldo', 'Real-Madrid-CF', 0),
-(13, 'Iniesta', 'FC-Barcelona', 1),
-(14, 'Suarez', 'FC-Barcelona', 1),
-(15, 'Bale', 'Real-Madrid-CF', 0),
-(16, 'Modric', 'Real-Madrid-CF', 0),
-(17, 'Stegen', 'FC-Barcelona', 1);
+(1, 'Messi', 'FC-Barcelona', 2),
+(2, 'Ronaldo', 'Real-Madrid-CF', 0),
+(3, 'Iniesta', 'FC-Barcelona', 1),
+(4, 'Suarez', 'FC-Barcelona', 1),
+(5, 'Bale', 'Real-Madrid-CF', 0),
+(6, 'Modric', 'Real-Madrid-CF', 0),
+(7, 'Stegen', 'FC-Barcelona', 1);
 
 -- --------------------------------------------------------
 
@@ -91,7 +92,7 @@ CREATE TABLE `tbmembers` (
 
 INSERT INTO `tbmembers` (`member_id`, `first_name`, `last_name`, `email`, `voter_id`, `password`, `image`) VALUES
 (1, 'Mahmudul', 'Hasan', 'sreejon07@gmail.com', '01670115309', '1', '../images/users/01670115309.jpg'),
-(4, 'Mehedi', 'Hasan', 'mehedi@gmail.com', '01563024897', '1', '');
+(2, 'Mehedi', 'Hasan', 'mehedi@gmail.com', '01563024897', '1', '');
 
 -- --------------------------------------------------------
 
@@ -148,22 +149,23 @@ ALTER TABLE `tbpositions`
 -- AUTO_INCREMENT for table `tbadministrators`
 --
 ALTER TABLE `tbadministrators`
-  MODIFY `admin_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `admin_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tbcandidates`
 --
 ALTER TABLE `tbcandidates`
-  MODIFY `candidate_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `candidate_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `tbmembers`
 --
 ALTER TABLE `tbmembers`
-  MODIFY `member_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `member_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tbpositions`
 --
 ALTER TABLE `tbpositions`
-  MODIFY `position_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `position_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
