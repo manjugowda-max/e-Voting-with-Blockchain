@@ -82,6 +82,7 @@
 
 				$_SESSION['member_id'] = $user['member_id'];
 				$_SESSION['voter_id'] = $user['voter_id'];
+				$_SESSION['voter_status'] = $user['voter_status'];
 				
 				header("location:voter.php");
 			}

@@ -4,26 +4,36 @@ require('connection.php');
 session_start();
 
 if( empty($_SESSION['member_id'])) {
-  header("location:access-denied.php");
+  header( "location: access-denied.php" );
 }
 
 ?>
 
 <?php
 
-$positions = mysql_query("SELECT * FROM tbPositions")
-or die("There are no records to display ... \n" . mysql_error()); 
+if( empty($_SESSION['voter_status']) ) {
+/*  $_SESSION['voter_status'] = 1;*/
+
+  $voterID = $_SESSION['voter_id'];
+  $voter_status = 1;
+  $sql = mysql_query( "UPDATE tbmembers SET voter_status='$voter_status' WHERE voter_id='$voterID'" ) or die( mysql_error() );
+  
+  header("location: vote.php");
+}
+else {
+  header("location: access-denied-to-vote.php");
+}
 
 ?>
 
 <?php
 
-if (isset($_POST['Submit'])) {
+/*if (isset($_POST['Submit'])) {
   $position = addslashes( $_POST['position'] ); 
    
   $result = mysql_query("SELECT * FROM tbCandidates WHERE candidate_position='$position'")
   or die(" There are no records at the moment ... \n"); 
-}
+}*/
 
 ?>
 
@@ -36,7 +46,7 @@ if (isset($_POST['Submit'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
   <script language="JavaScript" src="js/user.js"></script>
-  <script type="text/javascript">
+<!--   <script type="text/javascript">
     function getVote(int)
     {
       if (window.XMLHttpRequest)
@@ -93,7 +103,7 @@ if (isset($_POST['Submit'])) {
         });
        j('.refresh').css({color:"green"});
     });
-  </script>
+  </script> -->
 </head>
 
 <body id="top">
