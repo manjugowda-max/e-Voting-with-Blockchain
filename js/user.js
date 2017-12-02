@@ -176,7 +176,7 @@ function isValidVoterId(val){
     // return true;
 
     var len = val.toString().length;
-    if(len === 11){
+    if(len === 9){
         return true;
     }
     return false;

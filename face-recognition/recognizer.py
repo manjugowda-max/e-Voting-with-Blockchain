@@ -1,16 +1,16 @@
 import cv2, json, sys
 import numpy as np
 
-faceDetect = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+faceDetect = cv2.CascadeClassifier('C:\\xampp\\htdocs\\e-voting-with-blockchain\\face-recognition\\haarcascade_frontalface_default.xml')
 cam = cv2.VideoCapture(0)
 
 recognizer = cv2.createLBPHFaceRecognizer()
-recognizer.load('training_data.yml')
+recognizer.load('C:\\xampp\\htdocs\\e-voting-with-blockchain\\face-recognition\\training_data.yml')
 
 font = cv2.cv.InitFont(cv2.cv.CV_FONT_HERSHEY_COMPLEX_SMALL, 3, 1, 0, 2)
 
-# Id = int(sys.argv[1])
-Id = '123456789'
+Id = int(sys.argv[1])
+# Id = '123456789'
 Id = int(Id)
 
 i = 1
