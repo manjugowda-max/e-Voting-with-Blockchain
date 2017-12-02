@@ -142,7 +142,7 @@ if (isset($_POST['Submit'])) {
 
             <table bgcolor="#00FF00" width="270" align="center">
             <form>
-            <tr>
+            <tr style="border: 1px solid">
                 <td bgcolor="#5D7B9D">Candidates:</td>
                 <td bgcolor="#5D7B9D"></td>
             </tr>

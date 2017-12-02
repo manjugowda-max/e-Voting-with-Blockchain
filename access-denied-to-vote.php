@@ -30,6 +30,7 @@ if( empty($_SESSION['member_id']) ) {
 	<nav id="mainav" class="fl_right">
       <ul class="clear">
         <li class="active"><a href="voter.php">Home</a></li>
+        <li><a href="logout.php">Logout</a></li>
       </ul>
     </nav>
   </header>
