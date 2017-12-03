@@ -7,6 +7,19 @@ if( empty($_SESSION['member_id'])) {
   header("location:access-denied.php");
 }
 
+/*
+0 >> verify yourself
+1 >> can vote
+2 >> can't vote
+*/
+
+if( empty($_SESSION['voter_status']) ) {
+  header("location: voter-verification.php");
+}
+else if( $_SESSION['voter_status'] == 2 ) {
+  header("location: access-denied-to-vote.php");
+}
+
 ?>
 
 <?php
@@ -36,46 +49,45 @@ if (isset($_POST['Submit'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
   <script language="JavaScript" src="js/user.js"></script>
+  <script type='text/javascript'>
+    $('input[type=radio]').click(function() {
+        $("form id or class").submit();
+    });
+  </script>
   <script type="text/javascript">
-    function getVote(int)
-    {
-      if (window.XMLHttpRequest)
-      {// code for IE7+, Firefox, Chrome, Opera, Safari
-          xmlhttp=new XMLHttpRequest();
+    function getVote(int) {
+      if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
       }
-      else
-      {// code for IE6, IE5
-          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      else {
+        // code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
       }
 
-      if(confirm("Your vote is for "+int))
-      {
-          xmlhttp.open("GET","save.php?vote="+int,true);
-          xmlhttp.send();
+      if( confirm("Your vote is for "+int) ) {
+        xmlhttp.open("GET","vote-success.php?vote="+int,true);
+        xmlhttp.send();
       }
-      else
-      {
-          alert("Choose another candidate "); 
+      else {
+        alert("Choose another candidate "); 
       }
-      
     }
 
-    function getPosition(String)
-    {
-      if (window.XMLHttpRequest)
-      {// code for IE7+, Firefox, Chrome, Opera, Safari
-          xmlhttp=new XMLHttpRequest();
+    function getPosition(String) {
+      if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
       }
-      else
-      {// code for IE6, IE5
-          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      else {
+        // code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
       }
 
       xmlhttp.open("GET","vote.php?position="+String,true);
       xmlhttp.send();
     }
   </script>
-
   <script type="text/javascript">
     $(document).ready(function(){
       var j = jQuery.noConflict();
@@ -89,7 +101,6 @@ if (isset($_POST['Submit'])) {
                   }
                 })
             })
-            
         });
        j('.refresh').css({color:"green"});
     });
@@ -141,7 +152,7 @@ if (isset($_POST['Submit'])) {
             </table>
 
             <table bgcolor="#00FF00" width="270" align="center">
-            <form>
+            <form action="vote-success.php" method="GET">
             <tr style="border: 1px solid">
                 <td bgcolor="#5D7B9D">Candidates:</td>
                 <td bgcolor="#5D7B9D"></td>
@@ -149,15 +160,19 @@ if (isset($_POST['Submit'])) {
 
             <?php
               
-                if (isset($_POST['Submit']))
-                {
-                  while ($row=mysql_fetch_array($result)){
-                    
+                if( isset($_POST['Submit']) ) {
+                  while( $row = mysql_fetch_array($result) ) {
                       echo "<tr>";
                       echo "<td style='background-color:#5D7B9D'>" . $row['candidate_name']."</td>";
-                      echo "<td style='background-color:#5D7B9D'><input type='radio' name='vote' value='$row[candidate_name]' onclick='getVote(this.value)' /></td>";
+/*                      echo "<td style='background-color:#5D7B9D'>
+                              <input type='radio' name='vote' value='$row[candidate_name]' onclick='getVote(this.value)' />
+                            </td>";*/
+                      echo "<td style='background-color:#5D7B9D'>
+                              <input type='radio' name='vote' value='$row[candidate_name]' onclick='this.form.submit();' />
+                            </td>";
                       echo "</tr>";
                   }
+
                   mysql_free_result($result);
                   mysql_close($link);
                 }

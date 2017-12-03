@@ -3,27 +3,41 @@
 require('connection.php');
 session_start();
 
-	//If your session isn't valid, it returns you to the login screen for protection
-if( empty($_SESSION['member_id']) ) {
+if( empty($_SESSION['member_id'])) {
   header("location:access-denied.php");
 }
 
-if( empty( $_SESSION['login_status'] ) ) {
-  /*$_SESSION['login_status'] = 1;*/
-  header( "location: reg-verification.php" );
+?>
+
+<?php
+
+if( isset($_GET['vote']) ) {
+  $vote = $_REQUEST['vote'];
+
+  mysql_query( "UPDATE tbCandidates SET candidate_cvotes=candidate_cvotes+1 WHERE candidate_name='$vote'" );
+  /*mysql_close( $con );*/
+
+  $_SESSION['voter_status'] = 2;
+  $voter_status = $_SESSION['voter_status'];
+  $voterid = $_SESSION['voter_id'];
+  $sql = "UPDATE tbmembers SET voter_status='$voter_status' WHERE voter_id='$voterid'";
+  $result = mysql_query( $sql ) or die( mysql_error() ); 
+
+  mysql_close( $con );
+
 }
 
-?>
+?> 
 
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>online voting</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-	<script language="JavaScript" src="js/user.js"></script>
+  <title>online voting</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+  <script language="JavaScript" src="js/user.js"></script>
 </head>
 <body id="top">
 
@@ -55,8 +69,9 @@ if( empty( $_SESSION['login_status'] ) ) {
       <li class="one_half first">
         <blockquote>
           <div id="container">
-        		<p><h1>Welcome to Online Voting.</h1></p>
-        	</div>
+            <p><h1>Congratulation!</h1></p>
+            <p>You have successfully voted.</p>
+          </div>
         </blockquote>
       </li>
     </ul>

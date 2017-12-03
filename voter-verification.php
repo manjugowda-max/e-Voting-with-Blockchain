@@ -9,13 +9,6 @@ if( empty($_SESSION['member_id'])) {
 
 ?>
 
-<?php
-
-if( !empty($_SESSION['voter_status']) ) {
-  header("location: access-denied-to-vote.php");
-}
-
-?>
 
 <!DOCTYPE html>
 <html>
@@ -64,23 +57,29 @@ if( !empty($_SESSION['voter_status']) ) {
 
             <?php
 
-			if( isset($_POST['start']) ) {
-			  $voterID = $_SESSION['voter_id'];
+      			if( isset($_POST['start']) ) {
+      			  $voterID = $_SESSION['voter_id'];
 
-			  $result = exec("C:\\Python27\\python.exe C:\\xampp\\htdocs\\e-voting-with-blockchain\\face-recognition\\recognizer.py. $voterID");
+      			  $result = exec("C:\\Python27\\python.exe C:\\xampp\\htdocs\\e-voting-with-blockchain\\face-recognition\\recognizer.py. $voterID");
 
-			  //echo $result;
+      			  //echo $result;
 
-			  if( $result=="yes" ) {
-			  	header( "location: vote.php" );
-			  }
-			  else {
-			  	//try again:
-			  	header( "location: voter-verification-failure.php" );
-			  }
-			}
+      			  if( $result=="yes" ) {
+                $_SESSION['voter_status'] = 1;
 
-			?>
+                $voter_status = $_SESSION['voter_status'];
+                $sql = "UPDATE tbmembers SET voter_status='$voter_status' WHERE voter_id='$voterID'";
+                $result = mysql_query( $sql ) or die( mysql_error() );
+
+      			  	header( "location: vote.php" );
+      			  }
+      			  else {
+      			  	//try again:
+      			  	header( "location: voter-verification-failure.php" );
+      			  }
+      			}
+
+      			?>
 
           </div>
         </blockquote>
