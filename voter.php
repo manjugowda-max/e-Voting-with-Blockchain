@@ -8,6 +8,11 @@ if( empty($_SESSION['member_id']) ) {
   header("location:access-denied.php");
 }
 
+if( empty( $_SESSION['login_status'] ) ) {
+  /*$_SESSION['login_status'] = 1;*/
+  header( "location: reg-verification.php" );
+}
+
 ?>
 
 
@@ -32,7 +37,7 @@ if( empty($_SESSION['member_id']) ) {
         <li class="active"><a href="voter.php">Home</a></li>
         <li><a class="drop" href="#">Voter Pages</a>
           <ul>
-            <li><a href="voter-verification.php">Vote</a></li>
+            <li><a href="vote.php">Vote</a></li>
             <li><a href="manage-profile.php">Profile Manager</a></li>
           </ul>
         </li>

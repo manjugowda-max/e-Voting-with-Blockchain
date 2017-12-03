@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 
 recognizer = cv2.createLBPHFaceRecognizer()
-path = 'dataset'
+path = 'C:\\xampp\\htdocs\\e-voting-with-blockchain\\face-recognition\\dataset'
 
 def getImgWithId(path):
     imgPaths = [os.path.join(path, f) for f in os.listdir(path)]
@@ -25,6 +25,8 @@ def getImgWithId(path):
 
 ids, faces = getImgWithId(path)
 recognizer.train(faces, ids)
-recognizer.save('training_data.yml')
+recognizer.save('C:\\xampp\\htdocs\\e-voting-with-blockchain\\face-recognition\\training_data.yml')
 
 cv2.destroyAllWindows()
+
+print "OK 2"

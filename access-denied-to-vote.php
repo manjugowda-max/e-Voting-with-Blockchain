@@ -4,10 +4,11 @@ require('connection.php');
 session_start();
 
 if( empty($_SESSION['member_id']) ) {
-  header("location:access-denied.php");
+  header( "location: access-denied.php" );
 }
 
 ?>
+
 
 <!DOCTYPE html>
 <html>
