@@ -100,46 +100,47 @@ function updateProfile(registerForm){
 
     if (registerForm.firstname.value=="")
     {
-    errorMessage+="Firstname not filled!\n";
-    validationVerified=false;
+        errorMessage+="Firstname not filled!\n";
+        validationVerified=false;
     }
     if(registerForm.lastname.value=="")
     {
-    errorMessage+="Lastname not filled!\n";
-    validationVerified=false;
+        errorMessage+="Lastname not filled!\n";
+        validationVerified=false;
     }
     if (registerForm.email.value=="")
     {
-    errorMessage+="Email not filled!\n";
-    validationVerified=false;
+        errorMessage+="Email not filled!\n";
+        validationVerified=false;
     }
     if(registerForm.password.value=="")
     {
-    errorMessage+="New password not provided!\n";
-    validationVerified=false;
+        errorMessage+="New password not provided!\n";
+        validationVerified=false;
     }
     if(registerForm.ConfirmPassword.value=="")
     {
-    errorMessage+="Confirm password not filled!\n";
-    validationVerified=false;
+        errorMessage+="Confirm password not filled!\n";
+        validationVerified=false;
     }
     if(registerForm.ConfirmPassword.value!=registerForm.password.value)
     {
-    errorMessage+="Confirm password and new password do not match!\n";
-    validationVerified=false;
+        errorMessage+="Confirm password and new password do not match!\n";
+        validationVerified=false;
     }
     if (!isValidEmail(registerForm.email.value)) {
-    errorMessage+="Invalid email address provided!\n";
-    validationVerified=false;
+        errorMessage+="Invalid email address provided!\n";
+        validationVerified=false;
     }
     if(!validationVerified)
     {
-    alert(errorMessage);
+        alert(errorMessage);
     }
     if(validationVerified)
     {
-    alert(okayMessage);
+        alert(okayMessage);
     }
+    
     return validationVerified;
 }
 
