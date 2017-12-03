@@ -18,9 +18,7 @@ if (mysql_num_rows($result)<1){
 <?php
 
 // inserting sql query
-if (isset($_POST['Submit']))
-{
-
+if (isset($_POST['Submit'])) {
 $newPosition = addslashes( $_POST['position'] ); //prevents types of SQL injection
 
 $sql = mysql_query( "INSERT INTO tbPositions(position_name) VALUES ('$newPosition')" )
@@ -93,12 +91,13 @@ header("Location: positions.php");
 <div>
 	<table width="380" align="center">
 	<CAPTION><h3 style="color: #ffffff">ADD NEW PARTY</h3></CAPTION>
-	<form name="fmPositions" id="fmPositions" action="positions.php" method="post" onsubmit="return positionValidate(this)">
+	<form name="fmPositions" id="fmPositions" action="positions.php" method="post" onSubmit="return positionValidate(this)">
 	<tr>
 	    <td bgcolor="#5D7B9D" style="color: #ffffff">Party Name</td>
-	    <td bgcolor="#5D7B9D" style="color: #000000"><input type="text" name="position" /></td>
+	    <td bgcolor="#5D7B9D" style="color: #000000"><input type="text" name="position" value=""/></td>
 	    <td bgcolor="#5D7B9D" style="color: #000000"><input type="submit" name="Submit" value="Add" /></td>
 	</tr>
+	</form>
 	</table>
 
 	<table border="0" width="420" align="center">

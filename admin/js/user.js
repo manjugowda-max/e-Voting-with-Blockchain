@@ -314,24 +314,50 @@ return validationVerified;
 }
 
 //validate position form
-function positionValidate(positionForm){
+function positionValidate(positionForm) {
+    var validationVerified=true;
+    var errorMessage="";
+    var okayMessage="click OK to see the candidates under the chosen position";
 
-var validationVerified=true;
-var errorMessage="";
-var okayMessage="click OK to see the candidates under the chosen position";
+    if(positionForm.position.value == "") {
+        errorMessage+="Position not set!\n";
+        validationVerified=false;
+    }
 
-if (positionForm.position.selectedIndex == 0)
-{
-errorMessage+="Position not set!\n";
-validationVerified=false;
+    if(!validationVerified) {
+        alert(errorMessage);
+    }
+
+    if(validationVerified) {
+        alert(okayMessage);
+    }
+
+    return validationVerified;
 }
-if(!validationVerified)
-{
-alert(errorMessage);
-}
-if(validationVerified)
-{
-alert(okayMessage);
-}
-return validationVerified;
+
+//validate candidate form
+function candidateValidate(candidateForm) {
+    var validationVerified=true;
+    var errorMessage="";
+    var okayMessage="click OK to see the candidates under the chosen position";
+
+    if(candidateForm.name.value == "") {
+        errorMessage+="Party not set!\n";
+        validationVerified=false;
+    }
+    if(candidateForm.position.value == "select") {
+        errorMessage+="Select a Party!\n";
+        validationVerified=false;
+    }
+
+    if(!validationVerified) {
+        alert(errorMessage);
+    }
+
+    if(validationVerified) {
+        alert(okayMessage);
+    }
+
+    return validationVerified;
+
 }

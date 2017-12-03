@@ -99,10 +99,10 @@ if (isset($_GET['id'])) {
 <div>
   <table width="380" align="center">
   <CAPTION><h3 style="color: #ffffff">ADD NEW MEMBER</h3></CAPTION>
-  <form name="fmCandidates" id="fmCandidates" action="candidates.php" method="post" onsubmit="return candidateValidate(this)">
+  <form name="fmCandidates" id="fmCandidates" action="candidates.php" method="post" onSubmit="return candidateValidate(this)">
   <tr>
       <td bgcolor="#5D7B9D" style="color: #ffffff">Member Name</td>
-      <td bgcolor="#5D7B9D" style="color: #000000"><input type="text" name="name" /></td>
+      <td bgcolor="#5D7B9D" style="color: #000000"><input type="text" name="name" value="" /></td>
   </tr>
 
   <tr>
