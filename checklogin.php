@@ -89,7 +89,7 @@
 			}
 			//If the username or password is wrong, you will receive this message below.
 			else {
-				echo "Wrong Username or Password<br><br>Return to <a href=\"login.php\">Login</a>";
+				echo "Wrong Username or Password<br><br>Return to <a href=\"login.php\"><b>Login</b></a>";
 			}
 
 			ob_end_flush();
