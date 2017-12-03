@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2017 at 01:54 PM
+-- Generation Time: Dec 03, 2017 at 02:50 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -78,8 +78,7 @@ CREATE TABLE `tbmembers` (
 
 INSERT INTO `tbmembers` (`member_id`, `first_name`, `last_name`, `email`, `voter_id`, `password`, `image`, `voter_status`, `login_status`) VALUES
 (1, 'Mahmudul', 'Hasan', 'sreejon07@gmail.com', '123456789', '1', '../images/users/01670115309.jpg', 0, 0),
-(2, 'Mehedi', 'Hasan', 'mehedi@gmail.com', '123456788', '1', '', 0, 0),
-(3, 'TestAccount', '1', 'test1@gmail.com', '777888999', '1', '../images/users/777888999.jpg', 1, 1);
+(2, 'Mehedi', 'Hasan', 'mehedi@gmail.com', '123456788', '1', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -133,17 +132,17 @@ ALTER TABLE `tbadministrators`
 -- AUTO_INCREMENT for table `tbcandidates`
 --
 ALTER TABLE `tbcandidates`
-  MODIFY `candidate_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `candidate_id` int(5) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tbmembers`
 --
 ALTER TABLE `tbmembers`
-  MODIFY `member_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `member_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `tbpositions`
 --
 ALTER TABLE `tbpositions`
-  MODIFY `position_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `position_id` int(5) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
