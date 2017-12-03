@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2017 at 08:38 AM
--- Server version: 10.1.25-MariaDB
--- PHP Version: 5.6.31
+-- Generation Time: Dec 03, 2017 at 01:54 PM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -41,8 +39,7 @@ CREATE TABLE `tbadministrators` (
 --
 
 INSERT INTO `tbadministrators` (`admin_id`, `first_name`, `last_name`, `email`, `password`) VALUES
-(1, 'Mahmudul', 'Hasan', 'admin1@admin.com', 'admin'),
-(2, 'Mehedi', 'Hasan', 'admin2@admin.com', 'admin');
+(1, 'Mahmudul', 'Hasan', 'admin@admin.com', 'admin');
 
 -- --------------------------------------------------------
 
@@ -57,19 +54,6 @@ CREATE TABLE `tbcandidates` (
   `candidate_cvotes` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tbcandidates`
---
-
-INSERT INTO `tbcandidates` (`candidate_id`, `candidate_name`, `candidate_position`, `candidate_cvotes`) VALUES
-(1, 'Messi', 'FC-Barcelona', 2),
-(2, 'Ronaldo', 'Real-Madrid-CF', 0),
-(3, 'Iniesta', 'FC-Barcelona', 1),
-(4, 'Suarez', 'FC-Barcelona', 1),
-(5, 'Bale', 'Real-Madrid-CF', 0),
-(6, 'Modric', 'Real-Madrid-CF', 0),
-(7, 'Stegen', 'FC-Barcelona', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -83,16 +67,19 @@ CREATE TABLE `tbmembers` (
   `email` varchar(45) NOT NULL,
   `voter_id` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
-  `image` varchar(20000) NOT NULL
+  `image` varchar(20000) NOT NULL,
+  `voter_status` int(11) NOT NULL,
+  `login_status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbmembers`
 --
 
-INSERT INTO `tbmembers` (`member_id`, `first_name`, `last_name`, `email`, `voter_id`, `password`, `image`) VALUES
-(1, 'Mahmudul', 'Hasan', 'sreejon07@gmail.com', '01670115309', '1', '../images/users/01670115309.jpg'),
-(2, 'Mehedi', 'Hasan', 'mehedi@gmail.com', '01563024897', '1', '');
+INSERT INTO `tbmembers` (`member_id`, `first_name`, `last_name`, `email`, `voter_id`, `password`, `image`, `voter_status`, `login_status`) VALUES
+(1, 'Mahmudul', 'Hasan', 'sreejon07@gmail.com', '123456789', '1', '../images/users/01670115309.jpg', 0, 0),
+(2, 'Mehedi', 'Hasan', 'mehedi@gmail.com', '123456788', '1', '', 0, 0),
+(3, 'TestAccount', '1', 'test1@gmail.com', '777888999', '1', '../images/users/777888999.jpg', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -104,14 +91,6 @@ CREATE TABLE `tbpositions` (
   `position_id` int(5) NOT NULL,
   `position_name` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbpositions`
---
-
-INSERT INTO `tbpositions` (`position_id`, `position_name`) VALUES
-(1, 'FC-Barcelona'),
-(2, 'Real-Madrid-CF');
 
 --
 -- Indexes for dumped tables
@@ -149,23 +128,22 @@ ALTER TABLE `tbpositions`
 -- AUTO_INCREMENT for table `tbadministrators`
 --
 ALTER TABLE `tbadministrators`
-  MODIFY `admin_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `admin_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tbcandidates`
 --
 ALTER TABLE `tbcandidates`
-  MODIFY `candidate_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `candidate_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `tbmembers`
 --
 ALTER TABLE `tbmembers`
-  MODIFY `member_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `member_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tbpositions`
 --
 ALTER TABLE `tbpositions`
-  MODIFY `position_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
-
+  MODIFY `position_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
