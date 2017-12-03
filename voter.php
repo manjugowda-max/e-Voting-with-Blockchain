@@ -8,6 +8,11 @@ if( empty($_SESSION['member_id']) ) {
   header("location:access-denied.php");
 }
 
+if( empty( $_SESSION['login_status'] ) ) {
+  /*$_SESSION['login_status'] = 1;*/
+  header( "location: reg-verification.php" );
+}
+
 ?>
 
 

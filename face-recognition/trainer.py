@@ -28,3 +28,5 @@ recognizer.train(faces, ids)
 recognizer.save('C:\\xampp\\htdocs\\e-voting-with-blockchain\\face-recognition\\training_data.yml')
 
 cv2.destroyAllWindows()
+
+print "OK 2"

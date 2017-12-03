@@ -11,6 +11,7 @@ font = cv2.cv.InitFont(cv2.cv.CV_FONT_HERSHEY_COMPLEX_SMALL, 3, 1, 0, 2)
 
 Id = int(sys.argv[1])
 # Id = '123456789'
+# Id = '999999999'
 Id = int(Id)
 
 i = 1
@@ -29,31 +30,30 @@ while (True):
             userId = int(userId)
             conf = float(str(conf))
 
-            # print "User Id: ", userId
-            # print "Id: ", Id
+            # print "Conf : ", conf
+            # print "User Id : ", userId
+            # print "Id : ", Id
 
             if(Id == userId):
-                result = 1
-                break
+                x = (100 - conf) / 100
+                result += x
             else:
-                result = 0
+                result -= 1
             # print("step: ", i ," result: ", result)
             i += 1
             cv2.waitKey(300)
         
-        # cv2.imshow("Camera", img)
+        cv2.imshow("Camera", img)
 
         if(i > 10):
             break
         if (cv2.waitKey(1) == ord('q')):
             break
-    if (result == 1):
-        break;
 
 cam.release()
 cv2.destroyAllWindows()
 
-if (result == 1):
+if(result > 4):
     result = str(result)
     result = "yes"
 else:
@@ -61,5 +61,4 @@ else:
     result = "no"
 
 # result = json.dumps(result)
-# result = str(result)
 print result

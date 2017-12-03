@@ -57,7 +57,7 @@ if( !empty($_SESSION['voter_status']) ) {
         <blockquote>
           <div id="container">
 
-            <form action="voter-verification.php?id=<?php echo $voterID; ?>" method="POST">
+            <form action="voter-verification.php" method="POST">
               <p><h1>Please press Start button to start face recognition process.</h1></p>
               <input type="submit" name="start" value="Start" style="color: #000000">
             </form>
@@ -76,6 +76,7 @@ if( !empty($_SESSION['voter_status']) ) {
 			  }
 			  else {
 			  	//try again:
+			  	header( "location: voter-verification-failure.php" );
 			  }
 			}
 

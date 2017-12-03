@@ -30,37 +30,12 @@
         <blockquote>
 
   <div>
-  <?php
-  	require('connection.php');
-  	//Process
-  	if (isset($_POST['submit']))
-  	{
-
-  		$myFirstName = addslashes( $_POST['firstname'] ); //prevents types of SQL injection
-  		$myLastName = addslashes( $_POST['lastname'] ); //prevents types of SQL injection
-  		$myEmail = $_POST['email'];
-  		$myPassword = $_POST['password'];
-  		$myVoterid = $_POST['voter_id'];
-
-  		$newpass = md5($myPassword); //This will make your password encrypted into md5, a high security hash
-
-  		/*$sql = mysql_query( "INSERT INTO tbMembers(first_name, last_name, email, voter_id, password) VALUES ('$myFirstName','$myLastName', '$myEmail','$myVoterid', '$newpass')" )
-  		        or die( mysql_error() );*/
-
-      $sql = mysql_query( "INSERT INTO tbMembers(first_name, last_name, email, voter_id, password) VALUES ('$myFirstName','$myLastName', '$myEmail','$myVoterid', '$myPassword')" )
-              or die( mysql_error() );
-
-  	die( "You have registered for an account.<br><br>Go to <a href=\"login.php\">Login</a>" );
-  	}
-
-  	echo "<center><h3>Register an account by filling in the required informations below:</h3></center>";
-  	
-  ?>
-
+  <center><h3>Register an account by filling in the required informations below:</h3></center>
   </div> 
+  
 		<table style="background-color:powderblue;" width="300" border="0" align="center" cellpadding="0" cellspacing="1">
     <tr>
-      <form name="form1" method="post" action="registeracc.php" onSubmit="return registerValidate(this)">
+      <form name="form1" method="post" action="checkreg.php" onSubmit="return registerValidate(this)">
   <td>
 <table style="background-color:powderblue;" width="100%" border="0" cellpadding="3" cellspacing="1" >
 	<tr>

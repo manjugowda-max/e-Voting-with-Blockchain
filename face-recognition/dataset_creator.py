@@ -4,10 +4,11 @@ import numpy as np
 faceDetect = cv2.CascadeClassifier('C:\\xampp\\htdocs\\e-voting-with-blockchain\\face-recognition\\haarcascade_frontalface_default.xml')
 cam = cv2.VideoCapture(0)    
 
-# Id = sys.argv[1]
-Id = '123456789'
-i = 1
+Id = sys.argv[1]
+# Id = '123456789'
+# Id = '999999999'
 
+i = 1
 while (True):
     ret, img = cam.read()
     if ret is True:
@@ -30,3 +31,5 @@ while (True):
 
 cam.release()
 cv2.destroyAllWindows()
+
+print "OK 1"
