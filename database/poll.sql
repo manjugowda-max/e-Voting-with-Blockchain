@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2017 at 02:50 PM
+-- Generation Time: Dec 07, 2017 at 10:58 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -54,6 +54,16 @@ CREATE TABLE `tbcandidates` (
   `candidate_cvotes` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tbcandidates`
+--
+
+INSERT INTO `tbcandidates` (`candidate_id`, `candidate_name`, `candidate_position`, `candidate_cvotes`) VALUES
+(1, 'Messi', 'Barca', 1),
+(2, 'C. Ronaldo', 'Real', 0),
+(3, 'Inzaghi', 'Milan', 0),
+(4, 'Henry', 'Arsenal', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -77,7 +87,7 @@ CREATE TABLE `tbmembers` (
 --
 
 INSERT INTO `tbmembers` (`member_id`, `first_name`, `last_name`, `email`, `voter_id`, `password`, `image`, `voter_status`, `login_status`) VALUES
-(1, 'Mahmudul', 'Hasan', 'sreejon07@gmail.com', '123456789', '1', '../images/users/01670115309.jpg', 0, 0),
+(1, 'Mahmudul', 'Hasan', 'sreejon07@gmail.com', '123456789', '1', '../images/users/01670115309.jpg', 2, 1),
 (2, 'Mehedi', 'Hasan', 'mehedi@gmail.com', '123456788', '1', '', 0, 0);
 
 -- --------------------------------------------------------
@@ -90,6 +100,16 @@ CREATE TABLE `tbpositions` (
   `position_id` int(5) NOT NULL,
   `position_name` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbpositions`
+--
+
+INSERT INTO `tbpositions` (`position_id`, `position_name`) VALUES
+(1, 'Barca'),
+(2, 'Real'),
+(3, 'Milan'),
+(4, 'Arsenal');
 
 --
 -- Indexes for dumped tables
@@ -132,17 +152,17 @@ ALTER TABLE `tbadministrators`
 -- AUTO_INCREMENT for table `tbcandidates`
 --
 ALTER TABLE `tbcandidates`
-  MODIFY `candidate_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `candidate_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `tbmembers`
 --
 ALTER TABLE `tbmembers`
-  MODIFY `member_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `member_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tbpositions`
 --
 ALTER TABLE `tbpositions`
-  MODIFY `position_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `position_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
