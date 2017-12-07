@@ -7,6 +7,7 @@
   <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
   <script language="JavaScript" src="js/user.js"></script>
 </head>
+
 <body id="top">
 
 <div class="wrapper row1">
@@ -41,43 +42,43 @@
 	<tr>
 	<td style="color:#000000"; width="120" >First Name</td>
 	<td style="color:#000000"; width="6">:</td>
-	<td style="color:#000000"; width="294"><input name="firstname" type="text" ></td>
+	<td style="color:#000000"; width="294"><input name="firstname" type="text" class="my-input"></td>
 	</tr>
 
 	<tr>
 	<td style="color:#000000"; width="120" >Last Name</td>
 	<td style="color:#000000"; width="6">:</td>
-	<td style="color:#000000"; width="294"><input name="lastname" type="text" ></td>
+	<td style="color:#000000"; width="294"><input name="lastname" type="text" class="my-input"></td>
 	</tr>
 
 	<tr>
 	<td style="color:#000000"; width="180" >Email</td>
 	<td style="color:#000000"; width="6">:</td>
-	<td style="color:#000000"; width="294"><input name="email" type="text" ></td>
+	<td style="color:#000000"; width="294"><input name="email" type="text" class="my-input"></td>
 	</tr>
 
 	<tr>
 	<td style="color:#000000"; width="120" >Voter ID</td>
 	<td style="color:#000000"; width="6">:</td>
-	<td style="color:#000000"; width="294"><input name="voter_id" type="text" ></td>
+	<td style="color:#000000"; width="294"><input name="voter_id" type="text" class="my-input"></td>
 	</tr>
 
 	<tr>
 	<td style="color:#000000"; >Password</td>
 	<td style="color:#000000"; >:</td>
-	<td style="color:#000000"; ><input name="password" type="password" ></td>
+	<td style="color:#000000"; ><input name="password" type="password" class="my-input"></td>
 	</tr>
 
 	<tr>
 	<td style="color:#000000"; >Confirm Password</td>
 	<td style="color:#000000"; >:</td>
-	<td style="color:#000000"; ><input name="ConfirmPassword" type="password" ></td>
+	<td style="color:#000000"; ><input name="ConfirmPassword" type="password" class="my-input"></td>
 	</tr>
 
 	<tr>
 	<td>&nbsp;</td>
 	<td>&nbsp;</td>
-	<td style="color:#000000";><input type="submit" name="submit" value="Register Account"></td>
+	<td style="color:#000000";><input type="submit" name="submit" value="Register Account" class="my-button"></td>
 	</tr>
 
 </table>

@@ -134,16 +134,20 @@ if (isset($_POST['Submit'])) {
             <form name="fmNames" id="fmNames" method="post" action="vote.php" onSubmit="return positionValidate(this)">
             <tr>
                 <td bgcolor="#5D7B9D" >Choose Party</td>
-                <td bgcolor="#5D7B9D" style="color:#000000"; ><SELECT NAME="position" id="position" onclick="getPosition(this.value)">
-                <OPTION  VALUE="select">Select
-                <?php 
-                  //loop through all table rows
-                  while ($row=mysql_fetch_array($positions)){
-                    echo "<OPTION VALUE=$row[position_name]>$row[position_name]"; 
-                  }
-                ?>
-                </SELECT></td>
-                <td bgcolor="#5D7B9D" ><input style="color:#000000";  type="submit" name="Submit" value="See Candidates" /></td>
+                <td bgcolor="#5D7B9D" style="color:#000000"; >
+                  <div class="my-select">
+                    <SELECT NAME="position" id="position" onclick="getPosition(this.value)">
+                      <OPTION  VALUE="select">Select
+                      <?php 
+                        //loop through all table rows
+                        while ($row=mysql_fetch_array($positions)){
+                          echo "<OPTION VALUE=$row[position_name]>$row[position_name]"; 
+                        }
+                      ?>
+                    </SELECT>
+                  </div>
+                </td>
+                <td bgcolor="#5D7B9D" ><input style="color:#000000";  type="submit" name="Submit" value="See Candidates" class="my-button" /></td>
             </tr>
 
             <tr>

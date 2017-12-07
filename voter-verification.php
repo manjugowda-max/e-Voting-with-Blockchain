@@ -52,7 +52,7 @@ if( empty($_SESSION['member_id'])) {
 
             <form action="voter-verification.php" method="POST">
               <p><h1>Please press Start button to start face recognition process.</h1></p>
-              <input type="submit" name="start" value="Start" style="color: #000000">
+              <input type="submit" name="start" value="Start" style="color: #000000" class="my-button">
             </form>
 
             <?php

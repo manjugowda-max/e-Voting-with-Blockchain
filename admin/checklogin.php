@@ -68,7 +68,7 @@ if($count==1) {
 }
 else {
     echo "<br> <br> <br> ";
-    echo "<center><h2>Wrong Username or Password</h2><br><br><h3>Return to <a href=\"index.php\"><b>Login</b></a></h3></center>";
+    echo "<center><h2>Wrong Username or Password</h2><br><br><h3>Return to <a href=\"index.php\" style="text-decoration:none;"><b>Login</b></a></h3></center>";
 }
 
 ob_end_flush();

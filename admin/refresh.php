@@ -92,19 +92,23 @@ if(isset($_POST['Submit'])) {
         <tr>
           <td bgcolor="#5D7B9D" style="color:#ffffff">Choose Party</td>
           <td bgcolor="#5D7B9D" style="color:#000000">
-            <SELECT NAME="position" id="position">
-              <OPTION  VALUE="select"><p style="color:black";>Select</p>
-              <?php 
+            <div class="my-select">
+              <SELECT NAME="position" id="position">
+                <OPTION  VALUE="select"><p style="color:black";>Select</p>
+                <?php 
 
-              //loop through all table rows
-              while ($row=mysql_fetch_array($positions)) {
-                echo "<OPTION VALUE=$row[position_name]>$row[position_name]"; 
-              }
+                //loop through all table rows
+                while ($row=mysql_fetch_array($positions)) {
+                  echo "<OPTION VALUE=$row[position_name]>$row[position_name]"; 
+                }
 
-              ?>
-            </SELECT>
+                ?>
+              </SELECT>
+
+            </div>
+
           </td>
-          <td bgcolor="#5D7B9D" style="color:#000000"><input type="submit" name="Submit" value="See Results" /></td>
+          <td bgcolor="#5D7B9D" style="color:#000000"><input type="submit" name="Submit" value="See Results" class="my-button" /></td>
         </tr>
         <tr>
         </tr>

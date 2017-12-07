@@ -404,3 +404,57 @@ table a, #comments a{background-color:inherit;}
 	.font-x2{font-size:1.4rem;}
 	.font-x3{font-size:1.6rem;}
 }
+
+
+/* Used Defined
+--------------------------------------------------------------------------------------------------------------- */
+.my-button {
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s ease-in-out;
+    border-radius: 4px;
+    color: black; 
+    border: 2px solid #56AED4;
+    margin: auto;
+}
+
+.my-button:hover {
+    background-color: #56AED4;
+    color: white;
+    box-shadow: 0 10px 15px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.my-input {
+	-webkit-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+    border:1px solid #141414;
+    border-radius:4px;
+    outline:none;
+    box-sizing:border-box;
+    width: 100%;
+}
+
+.my-input:focus {
+    border-color: #56AED4;
+    box-shadow:0 0 8px 0 #1E90FF;
+}
+
+.my-select {
+	width: 100%;
+    border: 1px solid #141414;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #ffffff url("../../images/icon-select.ico") no-repeat 95% 50%;
+}
+
+.my-select select {
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+}
+
+.my-select select:focus {
+    outline: none;
+}
