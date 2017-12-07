@@ -13,26 +13,26 @@ $result=mysql_query("SELECT * FROM tbMembers WHERE member_id = '$_SESSION[member
 or die("There are no records to display ... \n" . mysql_error()); 
 
 if (mysql_num_rows($result)<1){
-    $result = null;
+  $result = null;
 }
 
 $row = mysql_fetch_array( $result );
 if($row) {
-     // get data from db
-     $stdId = $row['member_id'];
-     $firstName = $row['first_name'];
-     $lastName = $row['last_name'];
-     $email = $row['email'];
-     $voter_id = $row['voter_id'];
-     $image = $row['image'];
+	// get data from db
+	$stdId = $row['member_id'];
+	$firstName = $row['first_name'];
+	$lastName = $row['last_name'];
+	$email = $row['email'];
+	$voter_id = $row['voter_id'];
+	$image = $row['image'];
 
-     if( empty( $image ) ) {
-     	$image = "images/demo/default-avatar.jpg";
-     }
-     else {
-     	$image = "e-voting-with-blockchain/".$image;
-     }
- }
+	if( empty( $image ) ) {
+	 $image = "images/demo/default-avatar.jpg";
+	}
+	else {
+	 $image = "e-voting-with-blockchain/".$image;
+	}
+}
 
 ?>
 
@@ -157,44 +157,44 @@ if (isset($_POST['update'])) {
                 <td colspan="2" align="center">
                   <div id="camera" style="border:1px solid grey;"></div>
                   <br>
-                  <input style="color:#000000" id="take_snapshots" type="button" name="image" value="Take Snapshot">
+                  <input style="color:#000000" id="take_snapshots" type="button" name="image" value="Take Snapshot" class="my-button">
                 </td>
 
               </tr>
 
               <tr>
                 <td style="color:#000000" >First Name:</td>
-                <td style="color:#000000" ><input  style="color:#000000"; type="text" font-weight:bold;" name="firstname" maxlength="15" value=""></td>
+                <td style="color:#000000" ><input  style="color:#000000"; type="text" font-weight:bold;" name="firstname" maxlength="15" value="" class="my-input"></td>
               </tr>
 
               <tr>
                 <td style="color:#000000">Last Name:</td>
-                <td style="color:#000000"><input style="color:#000000";  type="text" font-weight:bold;" name="lastname" maxlength="15" value=""></td>
+                <td style="color:#000000"><input style="color:#000000";  type="text" font-weight:bold;" name="lastname" maxlength="15" value="" class="my-input"></td>
               </tr>
 
               <tr>
                 <td style="color:#000000" >Email Address:</td>
-                <td style="color:#000000"><input style="color:#000000";  type="text" font-weight:bold;" name="email" maxlength="100" value=""></td>
+                <td style="color:#000000"><input style="color:#000000";  type="text" font-weight:bold;" name="email" maxlength="100" value="" class="my-input"></td>
               </tr>
 
               <tr>
                 <td style="color:#000000" >Voter ID:</td>
-                <td style="color:#000000"><input  style="color:#000000";  type="text"  font-weight:bold;" name="voter_id" maxlength="100" value=""></td>
+                <td style="color:#000000"><input  style="color:#000000";  type="text"  font-weight:bold;" name="voter_id" maxlength="100" value="" class="my-input"></td>
               </tr>
 
               <tr>
                 <td style="color:#000000" >New Password:</td>
-                <td style="color:#000000" ><input  style="color:#000000";  type="password" font-weight:bold;" name="password" maxlength="15" value=""></td>
+                <td style="color:#000000" ><input  style="color:#000000";  type="password" font-weight:bold;" name="password" maxlength="15" value="" class="my-input"></td>
               </tr>
 
               <tr>
                 <td style="color:#000000" >Confirm New Password:</td>
-                <td style="color:#000000" ><input   style="color:#000000";  type="password"  font-weight:bold;" name="ConfirmPassword" maxlength="15" value=""></td>
+                <td style="color:#000000" ><input   style="color:#000000";  type="password"  font-weight:bold;" name="ConfirmPassword" maxlength="15" value="" class="my-input"></td>
               </tr>
 
               <tr>
                 <td style="color:#000000" >&nbsp;</td>
-                <td style="color:#000000" ><input style="color:#000000";  type="submit" name="update" value="Update Profile"></td>
+                <td style="color:#000000" ><input style="color:#000000";  type="submit" name="update" value="Update Profile" class="my-button"></td>
               </tr>
 
               </table>

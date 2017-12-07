@@ -90,14 +90,21 @@ header("Location: positions.php");
 
 <div>
 	<table width="380" align="center">
-	<CAPTION><h3 style="color: #ffffff">ADD NEW PARTY</h3></CAPTION>
-	<form name="fmPositions" id="fmPositions" action="positions.php" method="post" onSubmit="return positionValidate(this)">
-	<tr>
-	    <td bgcolor="#5D7B9D" style="color: #ffffff">Party Name</td>
-	    <td bgcolor="#5D7B9D" style="color: #000000"><input type="text" name="position" value=""/></td>
-	    <td bgcolor="#5D7B9D" style="color: #000000"><input type="submit" name="Submit" value="Add" /></td>
-	</tr>
-	</form>
+		<CAPTION><h3 style="color: #ffffff">ADD NEW PARTY</h3></CAPTION>
+
+		<form name="fmPositions" id="fmPositions" action="positions.php" method="post" onsubmit="return positionValidate(this)">
+			<tr>
+			    <td bgcolor="#5D7B9D" style="color: #ffffff; width: 30%;">Party Name</td>
+
+			    <td bgcolor="#5D7B9D" style="color: #000000; width: 40%;">
+			    	<input type="text" name="position" value="" class="my-input"/>
+			    </td>
+
+			    <td bgcolor="#5D7B9D" style="color: #000000; width: 30%;">
+			    	<input type="submit" name="Submit" value="Add" class="my-button"/>
+			    </td>
+			</tr>
+		</form>
 	</table>
 
 	<table border="0" width="420" align="center">

@@ -38,17 +38,17 @@
           <tr>
           <td style="color:#000000"; width="78" >Email</td>
           <td style="color:#000000"; width="6">:</td>
-          <td style="color:#000000"; width="294"><input name="myusername" type="text" id="myusername"></td>
+          <td style="color:#000000"; width="294"><input name="myusername" type="text" id="myusername" class="my-input"></td>
           </tr>
           <tr>
           <td style="color:#000000"; >Password</td>
           <td style="color:#000000"; >:</td>
-          <td style="color:#000000"; ><input name="mypassword" type="password" id="mypassword"></td>
+          <td style="color:#000000"; ><input name="mypassword" type="password" id="mypassword" class="my-input"></td>
           </tr>
           <tr>
           <td>&nbsp;</td>
           <td>&nbsp;</td>
-          <td style="color:#000000";><input type="submit" name="Submit" value="Login"></td>
+          <td style="color:#000000";><input type="submit" name="Submit" value="Login" class="my-button"></td>
           </tr>
           </table>
           </td>

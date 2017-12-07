@@ -33,7 +33,7 @@
             <form action="reg-verification.php" method="POST">
               <p><h1>Please Verify Yourself to proceed. </h1></p>
               <p>Press the Start button to start face recognition process.</p>
-              <input type="submit" name="start" value="Start" style="color: #000000">
+              <input type="submit" name="start" value="Start" class="my-button">
             </form>
 
             <?php

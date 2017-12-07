@@ -56,7 +56,7 @@ if(isset($_COOKIE['$email']) && $_COOKIE['$pass']) {
 
       </div>
       <br><br>
-    <center>Return to <a href="../index.php"><b>Home</b></a></center>
+    <center>Return to <a href="../index.php" style="text-decoration:none;"><b>Home</b></a></center>
 
     </form>
   </div>

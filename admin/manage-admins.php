@@ -119,27 +119,27 @@ if(empty($_SESSION['admin_id']) ){
 
         <tr>
           <td style="color:#000000";>First Name:</td>
-          <td style="color:#000000"><input type="text"  font-weight:bold;" name="firstname" maxlength="15" value=""></td>
+          <td style="color:#000000"><input type="text"  font-weight:bold;" name="firstname" maxlength="15" value="" class="my-input"></td>
         </tr>
         <tr>
           <td style="color:#000000">Last Name:</td>
-          <td style="color:#000000"><input type="text" font-weight:bold;" name="lastname" maxlength="15" value=""></td>
+          <td style="color:#000000"><input type="text" font-weight:bold;" name="lastname" maxlength="15" value="" class="my-input"></td>
         </tr>
         <tr>
           <td style="color:#000000">Email Address:</td>
-          <td style="color:#000000"><input type="text"  font-weight:bold;" name="email" maxlength="100" value=""></td>
+          <td style="color:#000000"><input type="text"  font-weight:bold;" name="email" maxlength="100" value="" class="my-input"></td>
         </tr>
         <tr>
           <td style="color:#000000">New Password:</td>
-          <td style="color:#000000"><input type="password"  font-weight:bold;" name="password" maxlength="15" value=""></td>
+          <td style="color:#000000"><input type="password"  font-weight:bold;" name="password" maxlength="15" value="" class="my-input"></td>
         </tr>
         <tr>
           <td style="color:#000000">Confirm New Password:</td>
-          <td style="color:#000000"><input type="password"  font-weight:bold;" name="ConfirmPassword" maxlength="15" value=""></td>
+          <td style="color:#000000"><input type="password"  font-weight:bold;" name="ConfirmPassword" maxlength="15" value="" class="my-input"></td>
         </tr>
         <tr>
           <td>&nbsp;</td>
-          <td style="color:#000000"><input type="submit" name="update" value="Update Account"></td>
+          <td style="color:#000000"><input type="submit" name="update" value="Update Account" class="my-button"></td>
         </tr>
       </table>
     </form>
@@ -153,27 +153,27 @@ if(empty($_SESSION['admin_id']) ){
 
           <tr>
             <td style="color:#000000">First Name:</td>
-            <td style="color:#000000"><input type="text"  font-weight:bold;" name="firstname" maxlength="15" value=""></td>
+            <td style="color:#000000"><input type="text"  font-weight:bold;" name="firstname" maxlength="15" value="" class="my-input"></td>
           </tr>
           <tr>
             <td style="color:#000000">Last Name:</td>
-            <td style="color:#000000"><input type="text" font-weight:bold;" name="lastname" maxlength="15" value=""></td>
+            <td style="color:#000000"><input type="text" font-weight:bold;" name="lastname" maxlength="15" value="" class="my-input"></td>
           </tr>
           <tr>
             <td style="color:#000000">Email Address:</td>
-            <td style="color:#000000"><input type="text"  font-weight:bold;" name="email" maxlength="100" value=""></td>
+            <td style="color:#000000"><input type="text"  font-weight:bold;" name="email" maxlength="100" value="" class="my-input"></td>
           </tr>
           <tr>
             <td style="color:#000000">Password:</td>
-            <td style="color:#000000"><input type="password" font-weight:bold;" name="password" maxlength="15" value=""></td>
+            <td style="color:#000000"><input type="password" font-weight:bold;" name="password" maxlength="15" value="" class="my-input"></td>
           </tr>
           <tr>
             <td style="color:#000000">Confirm Password:</td>
-            <td style="color:#000000"><input type="password" font-weight:bold;" name="ConfirmPassword" maxlength="15" value=""></td>
+            <td style="color:#000000"><input type="password" font-weight:bold;" name="ConfirmPassword" maxlength="15" value="" class="my-input"></td>
           </tr>
           <tr>
             <td>&nbsp;</td>
-            <td style="color:#000000"><input type="submit" name="submit" value="Create Account"></td>
+            <td style="color:#000000"><input type="submit" name="submit" value="Create Account" class="my-button"></td>
           </tr>
         </table>
     </form>

@@ -97,64 +97,76 @@ if (isset($_GET['id'])) {
 <div id="header" class="hoc clear"></div>
 
 <div>
+
   <table width="380" align="center">
-  <CAPTION><h3 style="color: #ffffff">ADD NEW MEMBER</h3></CAPTION>
-  <form name="fmCandidates" id="fmCandidates" action="candidates.php" method="post" onSubmit="return candidateValidate(this)">
-  <tr>
-      <td bgcolor="#5D7B9D" style="color: #ffffff">Member Name</td>
-      <td bgcolor="#5D7B9D" style="color: #000000"><input type="text" name="name" value="" /></td>
-  </tr>
+    <CAPTION><h3 style="color: #ffffff">ADD NEW MEMBER</h3></CAPTION>
 
-  <tr>
-      <td bgcolor="#5D7B9D" style="color: #ffffff">Party Name</td>
-      
-      <td bgcolor="#5D7B9D" style="color: #000000">
-        <SELECT NAME="position" id="position">select
-        <OPTION VALUE="select">Select
-          <?php
+    <form name="fmCandidates" id="fmCandidates" action="candidates.php" method="post" onsubmit="return candidateValidate(this)">
 
-          //loop through all table rows
-          while ($row=mysql_fetch_array($positions_retrieved)){
-            echo "<OPTION VALUE=$row[position_name]>$row[position_name]";
-          }
+      <tr>
+          <td bgcolor="#5D7B9D" style="color: #ffffff;">Member Name</td>
+          <td bgcolor="#5D7B9D" style="color: #000000;">
+            <input type="text" name="name" value="" class="my-input" style="width: 40%;"/>
+          </td>
+      </tr>
 
-          ?>
-        </SELECT>
-      </td>
-  </tr>
-  <tr>
-      <td bgcolor="#5D7B9D" >&nbsp;</td>
-      <td bgcolor="#5D7B9D" style="color: #000000"><input type="submit" name="Submit" value="Add" /></td>
-  </tr>
+      <tr>
+        <td bgcolor="#5D7B9D" style="color: #ffffff">Party Name</td>
+        
+        <td bgcolor="#5D7B9D" style="color: #000000">
+          <div class="my-select" style="width: 40%;">
+            <SELECT NAME="position" id="position">select
+            <OPTION VALUE="select">Select
+              <?php
+
+              //loop through all table rows
+              while ($row=mysql_fetch_array($positions_retrieved)){
+                echo "<OPTION VALUE=$row[position_name]>$row[position_name]";
+              }
+
+              ?>
+            </SELECT>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+          <td bgcolor="#5D7B9D" >&nbsp;</td>
+          <td bgcolor="#5D7B9D" style="color: #000000">
+            <input type="submit" name="Submit" value="Add" class="my-button" style="margin-left:0; margin-right:auto;"/>
+          </td>
+      </tr>
+
+    </form>
   </table>
 
   <table border="0" width="620" align="center">
-  <CAPTION><h3 style="color: #ffffff">AVAILABLE MEMBERS</h3></CAPTION>
-  <tr>
-  <td bgcolor="#5D7B9D" style="color: #ffffff">Member ID</td>
-  <td bgcolor="#5D7B9D" style="color: #ffffff">Member Name</td>
-  <td bgcolor="#5D7B9D" style="color: #ffffff">Party Name</td>
-  <td bgcolor="#5D7B9D" style="color: #ffffff"></td>
-  </tr>
+    <CAPTION><h3 style="color: #ffffff">AVAILABLE MEMBERS</h3></CAPTION>
 
-  <?php
+    <tr>
+      <td bgcolor="#5D7B9D" style="color: #ffffff">Member ID</td>
+      <td bgcolor="#5D7B9D" style="color: #ffffff">Member Name</td>
+      <td bgcolor="#5D7B9D" style="color: #ffffff">Party Name</td>
+      <td bgcolor="#5D7B9D" style="color: #ffffff"></td>
+    </tr>
 
-  //loop through all table rows
-  while ($row=mysql_fetch_array($result)){
-    echo "<tr>";
-    echo '<td style="color: #000000">' . $row['candidate_id']."</td>";
-    echo '<td style="color: #000000">' . $row['candidate_name']."</td>";
-    echo '<td style="color: #000000">' . $row['candidate_position']."</td>";
-    echo '<td style="color: #000000">'.'<a style="color: #5D7B9D" href="candidates.php?id=' . $row['candidate_id'] . '"><b>Delete Candidate</b></a></td>';
-    echo "</tr>";
-  }
+    <?php
+    //loop through all table rows
+    while ($row=mysql_fetch_array($result)){
+      echo "<tr>";
+      echo '<td style="color: #000000">' . $row['candidate_id']."</td>";
+      echo '<td style="color: #000000">' . $row['candidate_name']."</td>";
+      echo '<td style="color: #000000">' . $row['candidate_position']."</td>";
+      echo '<td style="color: #000000">'.'<a style="color: #5D7B9D" href="candidates.php?id=' . $row['candidate_id'] . '"><b>Delete Candidate</b></a></td>';
+      echo "</tr>";
+    }
 
-  mysql_free_result($result);
-  mysql_close($link);
+    mysql_free_result($result);
+    mysql_close($link);
 
-  ?>
-
+    ?>
   </table>
+
 </div>
 
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
