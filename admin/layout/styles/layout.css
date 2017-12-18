@@ -409,8 +409,8 @@ table a, #comments a{background-color:inherit;}
 /* Used Defined
 --------------------------------------------------------------------------------------------------------------- */
 .my-button {
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s ease-in-out;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s ease-in-out;
     border-radius: 4px;
     color: black; 
     border: 2px solid #56AED4;
@@ -420,7 +420,6 @@ table a, #comments a{background-color:inherit;}
 .my-button:hover {
     background-color: #56AED4;
     color: white;
-    box-shadow: 0 10px 15px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .my-input {
@@ -457,4 +456,14 @@ table a, #comments a{background-color:inherit;}
 
 .my-select select:focus {
     outline: none;
+}
+
+.row1 {
+	background-color:#2e3138;
+}
+
+#mainav li li a, #mainav .active li a{
+	color: #FFFFFF;
+	background-color: #2e3138;
+	border-color: #2e3138;
 }

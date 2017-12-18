@@ -46,7 +46,7 @@ if(empty($_SESSION['admin_id']) ){
 </div>
 
 
-<div class="wrapper bgded" style="background-color: #FAFAFA;">
+<div class="wrapper bgded" style="background-color: #141414;">
   <section id="testimonials" class="hoc container clear">
     <ul class="nospace group">
      

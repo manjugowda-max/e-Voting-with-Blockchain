@@ -48,7 +48,7 @@ if( empty( $_SESSION['login_status'] ) ) {
   </header>
 </div>
 
-<div class="wrapper bgded" style="background-color: #FAFAFA;">
+<div class="wrapper bgded" style="background-color: #141414;">
   <section id="testimonials" class="hoc container clear">
     <ul class="nospace group">
       <li class="one_half first">
