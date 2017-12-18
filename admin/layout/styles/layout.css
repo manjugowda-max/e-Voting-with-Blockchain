@@ -467,3 +467,15 @@ table a, #comments a{background-color:inherit;}
 	background-color: #2e3138;
 	border-color: #2e3138;
 }
+
+h1 {
+	color: white;
+}
+
+h3 {
+	color: white;
+}
+
+p {
+	color: white;
+}

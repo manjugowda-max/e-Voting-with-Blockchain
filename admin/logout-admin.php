@@ -4,7 +4,6 @@ session_start();
 
 ?>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,8 +34,6 @@ session_start();
   <section id="testimonials" class="hoc container clear">
     <ul class="nospace group">
       <li class="one_half">
-        <blockquote>
-
         	<div id="page">
   					<div id="header">
   					<h1>Logged Out Successfully </h1>
@@ -47,10 +44,8 @@ session_start();
   					session_destroy();
 
   					?>
-  					<br>
-  					Return to <a href="index.php"><b>Login</b></a>
+  					<p>Return to <a href="index.php"><b>Login</b></a></p>
 				  </div>
-        </blockquote>
       </li>
     </ul>
   </section>

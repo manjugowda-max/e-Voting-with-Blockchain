@@ -7,8 +7,7 @@ if(empty($_SESSION['admin_id']) ){
  	 header("location:access-denied.php");
 }
 
-?> 
-
+?>
 
 <!DOCTYPE html>
 <html>
@@ -50,9 +49,9 @@ if(empty($_SESSION['admin_id']) ){
   <section id="testimonials" class="hoc container clear">
     <ul class="nospace group">
      
-       <li class="one_half first">
+       <li class="">
 
-          <blockquote>
+          
             <p><h1>
 
     <?php
@@ -98,8 +97,6 @@ if(empty($_SESSION['admin_id']) ){
 	?>
 
         </h1></p>
-      </blockquote>
-        
       </li> 
 
     </ul>

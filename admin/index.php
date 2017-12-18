@@ -30,7 +30,7 @@ if(isset($_COOKIE['$email']) && $_COOKIE['$pass']) {
 
 <body>
 
-<div class="container" >
+<div class="container">
   <div class="card"></div>
 
   <div class="card">

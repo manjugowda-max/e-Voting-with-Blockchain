@@ -65,12 +65,10 @@ else
 <div class="wrapper bgded" style="background-color: #141414;">
   <section id="testimonials" class="hoc container clear">
     <ul class="nospace group">
-		<li class="one_half first">
-	        <blockquote>
-	          	<div id="container">
-	        		<h1>In this page, Admin can set candidates for voting and view results.</h1>
-	        	</div>
-	        </blockquote>
+		<li>
+	        <div id="container">
+	        	<h1>In this page, Admin can set candidates for voting and view results.</h1>
+	        </div>
       	</li>
     </ul>
    

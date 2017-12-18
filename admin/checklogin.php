@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <meta charset="UTF-8">
+  <title>Vote-Chain</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
 <body>
 
 <?php
@@ -68,7 +74,7 @@ if($count==1) {
 }
 else {
     echo "<br> <br> <br> ";
-    echo "<center><h2>Wrong Username or Password</h2><br><br><h3>Return to <a href=\"index.php\" style=\"text-decoration:none;\"><b>Login</b></a></h3></center>";
+    echo "<center><h3>Wrong Username or Password</h3><br><br><h3>Return to <a href=\"index.php\" style=\"text-decoration:none;\"><b>Login</b></a></h3></center>";
 }
 
 ob_end_flush();
