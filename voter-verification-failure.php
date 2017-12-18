@@ -12,7 +12,7 @@ if( empty($_SESSION['member_id']) ) {
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Decentralized Voting Platform</title>
+  <title>Vote-Chain</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -24,7 +24,7 @@ if( empty($_SESSION['member_id']) ) {
 <div class="wrapper row1">
   <header id="header" class="hoc clear">
     <div id="logo" class="fl_left">
-      <h1><a href="voter.php">Decentralized Voting Platform</a></h1>
+      <h1><a href="voter.php">Vote-Chain</a></h1>
     </div>
    
 	<nav id="mainav" class="fl_right">

@@ -33,7 +33,7 @@ if( isset($_GET['vote']) ) {
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Decentralized Voting Platform</title>
+  <title>Vote-Chain</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -44,7 +44,7 @@ if( isset($_GET['vote']) ) {
 <div class="wrapper row1">
   <header id="header" class="hoc clear"> 
     <div id="logo" class="fl_left">
-      <h1><a href="voter.php">Decentralized Voting Platform</a></h1>
+      <h1><a href="voter.php">Vote-Chain</a></h1>
     </div>
     <nav id="mainav" class="fl_right">
       <ul class="clear">
@@ -62,17 +62,17 @@ if( isset($_GET['vote']) ) {
   </header>
 </div>
 
-<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/background1.jpg');">
+<div class="wrapper bgded" style="background-color: #FAFAFA;">
   <section id="testimonials" class="hoc container clear">
-    <h2 class="font-x3 uppercase btmspace-80 underlined"> Online <a href="#">Voting</a></h2>
+<!--     <h2 class="font-x3 uppercase btmspace-80 underlined"> Online <a href="#">Voting</a></h2> -->
     <ul class="nospace group">
       <li class="one_half first">
-        <blockquote>
-          <div id="container">
+        <!-- <blockquote> -->
+          <div id="container" style="color: black;">
             <p><h1>Congratulation!</h1></p>
             <p>You have successfully voted.</p>
           </div>
-        </blockquote>
+        <!-- </blockquote> -->
       </li>
     </ul>
   </section>
