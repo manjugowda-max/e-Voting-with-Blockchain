@@ -53,7 +53,7 @@ header("Location: positions.php");
 <!DOCTYPE html>
 <html>
 <head>
-  <title>online voting</title>
+  <title>Decentralized Voting Platform</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -66,7 +66,7 @@ header("Location: positions.php");
   <header id="header" class="hoc clear"> 
     
     <div id="logo" class="fl_left">
-      <h1><a href="admin.php">ONLINE VOTING</a></h1>
+      <h1><a href="admin.php">Decentralized Voting Platform</a></h1>
     </div>
     <nav id="mainav" class="fl_right">
       <ul class="clear">

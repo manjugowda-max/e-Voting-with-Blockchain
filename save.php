@@ -18,4 +18,4 @@ mysql_close( $con );
 
 header( "location: vote.php" );
 
-?> 
+?>
