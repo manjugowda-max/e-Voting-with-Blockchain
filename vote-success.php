@@ -64,7 +64,6 @@ if( isset($_GET['vote']) ) {
 
 <div class="wrapper bgded" style="background-color: #FAFAFA;">
   <section id="testimonials" class="hoc container clear">
-<!--     <h2 class="font-x3 uppercase btmspace-80 underlined"> Online <a href="#">Voting</a></h2> -->
     <ul class="nospace group">
       <li class="one_half first">
         <!-- <blockquote> -->

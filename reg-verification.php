@@ -9,22 +9,8 @@
 </head>
 <body id="top">
 
-<!-- <div class="wrapper row1">
-  <header id="header" class="hoc clear"> 
-    <div id="logo" class="fl_left">
-      <h1><a href=""></a></h1>
-    </div>
-    <nav id="mainav" class="fl_right">
-      <ul class="clear">
-        <li class="active"><a href=""></a></li>
-      </ul>
-    </nav>
-  </header>
-</div> -->
-
 <div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/background1.jpg');">
   <section id="testimonials" class="hoc container clear">
-    <h2 class="font-x3 uppercase btmspace-80 underlined"> Online <a href="#">Voting</a></h2>
     <ul class="nospace group">
       <li class="one_half first">
         <blockquote>
