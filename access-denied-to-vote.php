@@ -9,7 +9,6 @@ if( empty($_SESSION['member_id']) ) {
 
 ?>
 
-
 <!DOCTYPE html>
 <html>
 <head>

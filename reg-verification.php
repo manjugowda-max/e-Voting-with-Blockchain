@@ -10,15 +10,16 @@
 <body id="top">
 
 <div class="wrapper bgded" style="background-color: #141414;">
-  <section id="testimonials" class="hoc container clear">
+ <section id="testimonials" class="hoc container clear">
+  	
     <ul class="nospace group">
-      <li class="one_half first">
-        <blockquote>
+      <li class="">
+      	<center>
           <div id="container">
-
             <form action="reg-verification.php" method="POST">
-              <p><h1>Please Verify Yourself to proceed. </h1></p>
+              <h1>Please Verify Yourself!</h1>
               <p>Press the Start button to start face recognition process.</p>
+              <br>
               <input type="submit" name="start" value="Start" class="my-button">
             </form>
 
@@ -46,9 +47,11 @@
             ?>
 
           </div>
-        </blockquote>
+        </center>
       </li>
+
     </ul>
+
   </section>
 </div>
 

@@ -26,9 +26,10 @@
 <div class="wrapper bgded" style="background-color: #141414;">
   <section id="testimonials" class="hoc container clear">
     <ul class="nospace group">
-      <li class="one_half">
-        <blockquote>
-
+	    <li class="one_third">
+	    	<p><h1></h1></p>
+	    </li>
+      <li class="one_third">
           <table style="background-color:powderblue;" width="300" border="0" align="center" cellpadding="0" cellspacing="1">
           <tr>
           <form name="form1" method="post" action="checklogin.php" onSubmit="return loginValidate(this)">
@@ -57,9 +58,6 @@
           <center>
           <br>Not yet registered? <a href="registeracc.php"><b>Register Here</b></a>
           </center>
-
-        </blockquote>
-      
       </li>
     </ul>
   </section>

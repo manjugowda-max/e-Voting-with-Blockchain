@@ -49,12 +49,12 @@ if (isset($_POST['submit'])) {
   <section id="testimonials" class="hoc container clear">
     <ul class="nospace group">
       <li class="one_half first">
-        <blockquote>
+
           <div id="container">
               <h1>You have successfully registered your account.</h1>
               <p>Go to <a href="login.php"><b>Login</b></a></p>
           </div>
-        </blockquote>
+
       </li>
     </ul>
   </section>

@@ -52,11 +52,9 @@ if( empty( $_SESSION['login_status'] ) ) {
   <section id="testimonials" class="hoc container clear">
     <ul class="nospace group">
       <li class="one_half first">
-        <blockquote>
-          <div id="container">
-        		<p><h1>Welcome to Online Voting.</h1></p>
-        	</div>
-        </blockquote>
+        <div id="container">
+        	<p><h1>Welcome to Vote-Chain.</h1></p>
+       	</div>
       </li>
     </ul>
   </section>

@@ -27,7 +27,7 @@
   <section id="testimonials" class="hoc container clear">
     <ul class="nospace group">
       <li class="one_half">
-        <blockquote>
+<!--         <blockquote> -->
 
   <div>
   <center><h3>Register an account by filling in the required informations below:</h3></center>
@@ -86,9 +86,9 @@
 </tr>
 </table>
 
-          <center><br>Already have an account? <a href="login.php"><b>Login Here</b></a></center>
+          <center><br><p>Already have an account? <a href="login.php"><b>Login Here</b></p></a></center>
 
-        </blockquote>
+        <!-- </blockquote> -->
       
       </li>
     </ul>

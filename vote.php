@@ -127,12 +127,16 @@ if (isset($_POST['Submit'])) {
 <div class="wrapper bgded" style="background-color: #141414;">
   <section id="testimonials" class="hoc container clear">
     <ul class="nospace group">
+		
+		<h3>Congratulation!</h3>
+		<p>You Have Successfully Verified Yourself.</p>
+		<br>
 
         <div>
             <table bgcolor="#00FF00" width="420" align="center">
             <form name="fmNames" id="fmNames" method="post" action="vote.php" onSubmit="return positionValidate(this)">
             <tr>
-                <td bgcolor="#5D7B9D" >Choose Party</td>
+                <td bgcolor="#5D7B9D" ><p>Choose Party</p></td>
                 <td bgcolor="#5D7B9D" style="color:#000000"; >
                   <div class="my-select">
                     <SELECT NAME="position" id="position" onclick="getPosition(this.value)">
@@ -157,7 +161,7 @@ if (isset($_POST['Submit'])) {
             <table bgcolor="#00FF00" width="270" align="center">
             <form action="vote-success.php" method="GET">
             <tr style="border: 1px solid">
-                <td bgcolor="#5D7B9D">Candidates:</td>
+                <td bgcolor="#5D7B9D"><p>Candidates:</p></td>
                 <td bgcolor="#5D7B9D"></td>
             </tr>
 
@@ -166,10 +170,8 @@ if (isset($_POST['Submit'])) {
                 if( isset($_POST['Submit']) ) {
                   while( $row = mysql_fetch_array($result) ) {
                       echo "<tr>";
-                      echo "<td style='background-color:#5D7B9D'>" . $row['candidate_name']."</td>";
-/*                      echo "<td style='background-color:#5D7B9D'>
-                              <input type='radio' name='vote' value='$row[candidate_name]' onclick='getVote(this.value)' />
-                            </td>";*/
+                      echo "<td style='background-color:#5D7B9D'>".$row['candidate_name']."</td>";
+
                       echo "<td style='background-color:#5D7B9D'>
                               <input type='radio' name='vote' value='$row[candidate_name]' onclick='this.form.submit();' />
                             </td>";

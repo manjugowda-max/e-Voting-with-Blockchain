@@ -29,7 +29,6 @@ if( isset($_GET['vote']) ) {
 
 ?> 
 
-
 <!DOCTYPE html>
 <html>
 <head>

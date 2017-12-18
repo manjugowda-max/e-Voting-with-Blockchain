@@ -41,62 +41,32 @@
 <div class="wrapper bgded" style="background-color: #141414;">
   <section id="testimonials" class="hoc container clear">
     <ul class="nospace group">
-      <li class="one_half">
-        <blockquote>
+      <li>
+        <h1>Welcome to Vote-Chain!</h1>
+        <br>
+        <p>
           <b>Electronic Voting</b> technology can speed the counting of ballots, reduce the cost of paying staff to count votes manually and can provide improved accessibility for disabled voters.
           <br>
           <br>
           <b>Blockchain</b> technology is an incorruptible digital ledger of economic transactions that can be programmed to record not just financial transactions but virtually everything of value.
-        </blockquote>
+        </p>
       </li>
     </ul>
   </section>
 </div>
 
-<div class="wrapper row4">
-  <footer id="footer" class="hoc clear">
-    <div class="one_third first">
-      <h6 class="title">Address</h6>
-      <ul class="nospace linklist contact">
-        <li><i class="fa fa-map-marker"></i>
-          <address>
-          <p>
-          Name        : Mahmudul Hasan <br>
-          University  : IST <br>
-          Batch       : 2012-2013 <br>
-          Dept        : CSE <br>
-          </p>
-          </address>
-        </li>
-      </ul>
-    </div>
-
-    <div class="one_third">
-      <h6 class="title">Phone</h6>
-      <ul class="nospace linklist contact">
-       
-        <li><i class="fa fa-phone"></i> +880 1670115309</li>
-
-      </ul>
-    </div>
-
-    <div class="one_third">
-      <h6 class="title">Email</h6>
-      <ul class="nospace linklist contact">
-        
-        <li><i class="fa fa-envelope-o"></i> sreejon07@gmail.com </li>
-
-      </ul>
-    </div>
-
-  </footer>
-</div>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <div class="wrapper row5">
   <div id="copyright" class="hoc clear"> 
     <center>
-    	<p>Copyright &copy; 2017 - All Rights Reserved - <i>Mahmudul Hasan</i></p>
-	</center>
+      <p>Copyright &copy; 2017 - <i>Mahmudul Hasan and Mehedi Hasan</i></p>
+      <p>All Rights Reserved</p>
+  </center>
   </div>
 </div>
 

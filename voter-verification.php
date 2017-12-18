@@ -45,12 +45,17 @@ if( empty($_SESSION['member_id'])) {
 <div class="wrapper bgded" style="background-color: #141414;">
   <section id="testimonials" class="hoc container clear">
     <ul class="nospace group">
-      <li class="one_half first">
-        <blockquote>
+      <li class="one_third">
+        <div id="container">
+          <p><h1></h1></p>
+        </div>
+      </li>
+      <li class="one_third">
+        <center>
           <div id="container">
-
             <form action="voter-verification.php" method="POST">
               <p><h1>Please press Start button to start face recognition process.</h1></p>
+              <br>
               <input type="submit" name="start" value="Start" style="color: #000000" class="my-button">
             </form>
 
@@ -81,7 +86,7 @@ if( empty($_SESSION['member_id'])) {
       			?>
 
           </div>
-        </blockquote>
+        </center>
       </li>
     </ul>
   </section>

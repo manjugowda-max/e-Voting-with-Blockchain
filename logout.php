@@ -1,6 +1,6 @@
 <?php
 
-	session_start();
+session_start();
 
 ?>
 
@@ -33,10 +33,12 @@
 <div class="wrapper bgded" style="background-color: #141414;">
   <section id="testimonials" class="hoc container clear">
     <ul class="nospace group">
-      <li class="one_half">
-        <blockquote>
-
-        	<div id="page">
+      <li class="one_third">
+        <p><h1></h1></p>
+      </li>
+      <li class="one_third">
+        <center>
+        <div id="page">
   					<div id="header">
   					<h1>Logged Out Successfully </h1>
   					
@@ -48,9 +50,7 @@
   					Return to <a href="login.php"><b>Login</b></a>
 
 				</div>
-
-        </blockquote>
-      
+      </center>
       </li>
     </ul>
   </section>

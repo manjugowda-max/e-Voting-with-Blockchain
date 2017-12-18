@@ -99,11 +99,11 @@ if (isset($_POST['update'])) {
   <section id="testimonials" class="hoc container clear"> 
     <ul class="nospace group">
       <li class="one_half first">
-        <blockquote>
             <table border="0" width="620" align="center">
             <CAPTION><h3>MY PROFILE</h3></CAPTION>
-            <form>
             <br>
+            
+            <form>
 
             <tr>
               <td colspan="2" align="center">
@@ -139,12 +139,9 @@ if (isset($_POST['update'])) {
             </tr>
             </table>
             </form>
-
-        </blockquote>
-      
       </li>
+
       <li class="one_half">
-        <blockquote>
             <table  border="0" width="620" align="center">
             <CAPTION><h3>UPDATE PROFILE</h3></CAPTION>
             <form action="manage-profile.php?id=<?php echo $_SESSION['member_id']; ?>" method="post" onsubmit="return updateProfile(this)">
@@ -199,9 +196,6 @@ if (isset($_POST['update'])) {
               </table>
             </form>
             </table>
-
-        </blockquote>
-      
       </li>
     </ul>
   </section>
