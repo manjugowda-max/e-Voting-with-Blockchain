@@ -37,7 +37,7 @@ if( empty($_SESSION['member_id']) ) {
   </header>
 </div>
 
-<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/background1.jpg');">
+<div class="wrapper bgded" style="background-color: #FAFAFA;">
   <section id="testimonials" class="hoc container clear"> 
     <ul class="nospace group">
       <li class="one_half">
