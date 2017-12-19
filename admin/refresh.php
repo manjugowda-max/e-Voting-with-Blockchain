@@ -103,7 +103,6 @@ if(isset($_POST['Submit'])) {
 
     <table width="420" align="center">
       <tr>
-        <td bgcolor="#5D7B9D" style="color:#ffffff">Party Name</td>
         <td bgcolor="#5D7B9D" style="color:#ffffff">Candidate Name</td>
         <td bgcolor="#5D7B9D" style="color:#ffffff">Vote(s)</td>
       </tr>
@@ -115,9 +114,8 @@ if(isset($_POST['Submit'])) {
 
         while( $row = mysql_fetch_array( $result ) ) {
           echo "<tr>";
-          echo "<td style='color: black;'>".$row['candidate_position']."</td>";
           echo "<td style='color: black;'>".$row['candidate_name']."</td>";
-          echo "<td style='color: black;'>".$row['candidate_cvotes']."</td>";
+          echo "<td style='color: black;'>"."<b>".$row['candidate_cvotes']."</b>"."</td>";
           echo "</tr>";
         }
       }
