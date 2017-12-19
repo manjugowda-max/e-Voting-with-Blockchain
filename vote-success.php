@@ -65,12 +65,10 @@ if( isset($_GET['vote']) ) {
   <section id="testimonials" class="hoc container clear">
     <ul class="nospace group">
       <li class="one_half first">
-        <!-- <blockquote> -->
           <div id="container" style="color: black;">
             <p><h1>Congratulation!</h1></p>
             <p>You have successfully voted.</p>
           </div>
-        <!-- </blockquote> -->
       </li>
     </ul>
   </section>

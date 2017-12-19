@@ -1,28 +1,41 @@
 <?php
 
 require('../connection.php');
+// retrieving candidate(s) results based on position
+if (isset($_POST['Submit'])){
+  $position = addslashes( $_POST['position'] );
+  
+  $results = mysql_query("SELECT * FROM tbCandidates where candidate_position='$position'");
 
-session_start();
+  $row1 = mysql_fetch_array($results); // for the first candidate
+  $row2 = mysql_fetch_array($results); // for the second candidate
+  if ($row1){
+  $candidate_name_1=$row1['candidate_name']; // first candidate name
+  $candidate_1=$row1['candidate_cvotes']; // first candidate votes
+  }
 
-if(empty($_SESSION['admin_id'])) {
- header("location:access-denied.php");
+  if ($row2){
+  $candidate_name_2=$row2['candidate_name']; // second candidate name
+  $candidate_2=$row2['candidate_cvotes']; // second candidate votes
+  }
 }
 
 ?> 
 
 <?php
 
-$positions = mysql_query("SELECT * FROM tbPositions") or die("There are no records to display ... \n" . mysql_error()); 
+// retrieving positions sql query
+$positions=mysql_query("SELECT * FROM tbPositions")
+or die("There are no records to display ... \n" . mysql_error()); 
 
 ?>
 
 <?php
 
-if (isset($_POST['Submit'])) {
-  $position = addslashes( $_POST['position'] ); 
-   
-  $result = mysql_query("SELECT * FROM tbCandidates WHERE candidate_position='$position'")
-  or die(" There are no records at the moment ... \n"); 
+session_start();
+//If your session isn't valid, it returns you to the login screen for protection
+if(empty($_SESSION['admin_id'])) {
+ header("location:access-denied.php");
 }
 
 ?>
@@ -84,13 +97,16 @@ if(isset($_POST['Submit'])) {
                 <OPTION  VALUE="select"><p style="color:black";>Select</p>
                 <?php 
 
-                while( $row = mysql_fetch_array( $positions ) ) {
+                //loop through all table rows
+                while ($row=mysql_fetch_array($positions)) {
                   echo "<OPTION VALUE=$row[position_name]>$row[position_name]"; 
                 }
 
                 ?>
               </SELECT>
+
             </div>
+
           </td>
           <td bgcolor="#5D7B9D" style="color:#000000"><input type="submit" name="Submit" value="See Results" class="my-button" /></td>
         </tr>
@@ -98,43 +114,23 @@ if(isset($_POST['Submit'])) {
         </tr>
       </form> 
     </table>
-    
+
+    <?php if(isset($_POST['Submit'])){echo $candidate_name_1;} ?> :<br>
+    <img src="images/candidate-1.gif" height="10" 
+    width="<?php if(isset($_POST['Submit'])){ if ($candidate_2 || $candidate_1 != 0){echo(100*round($candidate_1/($candidate_2+$candidate_1),2));}} ?>" >
+
+    <?php if(isset($_POST['Submit'])){ if ($candidate_2 || $candidate_1 != 0){echo(100*round($candidate_1/($candidate_2+$candidate_1),2));}} ?>% of <?php if(isset($_POST['Submit'])){echo $totalvotes;} ?> total votes
+    <br>Vote(s) <?php if(isset($_POST['Submit'])){ echo $candidate_1;} ?>
+
+    <br>
     <br>
 
-    <table width="420" align="center">
-      <tr>
-        <td bgcolor="#5D7B9D" style="color:#ffffff">Party Name</td>
-        <td bgcolor="#5D7B9D" style="color:#ffffff">Candidate Name</td>
-        <td bgcolor="#5D7B9D" style="color:#ffffff">Vote(s)</td>
-      </tr>
-      <tr>
+    <?php if(isset($_POST['Submit'])){ echo $candidate_name_2;} ?> :<br>
+    <img src="images/candidate-2.gif" height="10" 
+    width="<?php if(isset($_POST['Submit'])){ if ($candidate_2 || $candidate_1 != 0){echo(100*round($candidate_2/($candidate_2+$candidate_1),2));}} ?>" >
 
-        <?php
-
-        if( isset( $_POST['Submit'] ) ) {
-          $result = mysql_query("SELECT * FROM tbcandidates WHERE candidate_position='$position'") or die("There are no records to display ... \n" . mysql_error());
-
-          ;
-
-          while( $row = mysql_fetch_array( $result ) ) {
-            echo "<tr>";
-            echo "<td style='color: black;'>".$row['candidate_position']."</td>";
-
-            echo "<td style='color: black;'>".$row['candidate_name']."</td>";
-
-            echo "<td style='color: black;'>".$row['candidate_cvotes']."</td>";
-            echo "</tr>";
-          }
-
-
-        }
-
-        ?>
-
-        
-
-      </tr>
-    </table>
+    <?php if(isset($_POST['Submit'])){ if ($candidate_2 || $candidate_1 != 0){echo(100*round($candidate_2/($candidate_2+$candidate_1),2));}} ?>% of <?php if(isset($_POST['Submit'])){echo $totalvotes;} ?> total votes
+    <br>Vote(s) <?php if(isset($_POST['Submit'])){ echo $candidate_2;} ?>
   
   </div>
 </div>

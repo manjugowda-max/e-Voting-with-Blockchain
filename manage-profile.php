@@ -153,7 +153,7 @@ if (isset($_POST['update'])) {
                 <td colspan="2" align="center">
                   <div id="camera" style="border:1px solid grey;"></div>
                   <br>
-                  <input style="color:#000000" id="take_snapshots" type="button" name="image" value="Take Snapshot" class="my-button">
+                  <input id="take_snapshots" type="button" name="image" value="Take Snapshot" class="my-button">
                 </td>
 
               </tr>
@@ -190,7 +190,7 @@ if (isset($_POST['update'])) {
 
               <tr>
                 <td style="color:#000000" >&nbsp;</td>
-                <td style="color:#000000" ><input style="color:#000000";  type="submit" name="update" value="Update Profile" class="my-button"></td>
+                <td style="color:#000000" ><input type="submit" name="update" value="Update Profile" class="my-button"></td>
               </tr>
 
               </table>

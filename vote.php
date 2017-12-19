@@ -127,16 +127,21 @@ if (isset($_POST['Submit'])) {
 <div class="wrapper bgded" style="background-color: #141414;">
   <section id="testimonials" class="hoc container clear">
     <ul class="nospace group">
-		
-		<h3>Congratulation!</h3>
-		<p>You Have Successfully Verified Yourself.</p>
-		<br>
+    
+      <?php
+      
+      if( $_SESSION['voter_status'] == 1 && $_SESSION['login_status']== 1 ) {
+        echo "<h3>Congratulation!</h3>";
+        echo "<p>You Have Successfully Verified Yourself.</p>";
+        echo "<br>";
+      }
+      ?>
 
         <div>
             <table bgcolor="#00FF00" width="420" align="center">
             <form name="fmNames" id="fmNames" method="post" action="vote.php" onSubmit="return positionValidate(this)">
             <tr>
-                <td bgcolor="#5D7B9D" ><p>Choose Party</p></td>
+                <td bgcolor="#5D7B9D" ><lable style="color: white;">Choose Party:</lable></td>
                 <td bgcolor="#5D7B9D" style="color:#000000"; >
                   <div class="my-select">
                     <SELECT NAME="position" id="position" onclick="getPosition(this.value)">
@@ -150,7 +155,7 @@ if (isset($_POST['Submit'])) {
                     </SELECT>
                   </div>
                 </td>
-                <td bgcolor="#5D7B9D" ><input style="color:#000000";  type="submit" name="Submit" value="See Candidates" class="my-button" /></td>
+                <td bgcolor="#5D7B9D" ><input type="submit" name="Submit" value="See Candidates" class="my-button" /></td>
             </tr>
 
             <tr>
@@ -161,7 +166,7 @@ if (isset($_POST['Submit'])) {
             <table bgcolor="#00FF00" width="270" align="center">
             <form action="vote-success.php" method="GET">
             <tr style="border: 1px solid">
-                <td bgcolor="#5D7B9D"><p>Candidates:</p></td>
+                <td bgcolor="#5D7B9D"><lable style="color: white;">Candidates:</lable></td>
                 <td bgcolor="#5D7B9D"></td>
             </tr>
 
@@ -170,9 +175,9 @@ if (isset($_POST['Submit'])) {
                 if( isset($_POST['Submit']) ) {
                   while( $row = mysql_fetch_array($result) ) {
                       echo "<tr>";
-                      echo "<td style='background-color:#5D7B9D'>".$row['candidate_name']."</td>";
+                      echo "<td>"."<lable style='color: black;'>".$row['candidate_name']."</lable>"."</td>";
 
-                      echo "<td style='background-color:#5D7B9D'>
+                      echo "<td>
                               <input type='radio' name='vote' value='$row[candidate_name]' onclick='this.form.submit();' />
                             </td>";
                       echo "</tr>";
