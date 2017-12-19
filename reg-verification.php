@@ -1,3 +1,14 @@
+<?php
+require('connection.php');
+session_start();
+
+if( empty($_SESSION['member_id'])) {
+  header("location:access-denied.php");
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,10 +36,7 @@
 
             <?php
 
-            require('connection.php');
-            session_start();
-
-      			if( isset($_POST['start']) ) {
+      		if( isset($_POST['start']) ) {
               $voterid = $_SESSION['voter_id'];
 
       			  $result = exec("C:\\Python27\\python.exe C:\\xampp\\htdocs\\e-voting-with-blockchain\\face-recognition\\dataset_creator.py. $voterid");

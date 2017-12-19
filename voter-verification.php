@@ -75,10 +75,9 @@ if( empty($_SESSION['member_id'])) {
                 $sql = "UPDATE tbmembers SET voter_status='$voter_status' WHERE voter_id='$voterID'";
                 $result = mysql_query( $sql ) or die( mysql_error() );
 
-      			  	header( "location: vote.php" );
+      			  	header( "location: vote-verification-success.php" );
       			  }
       			  else {
-      			  	//try again:
       			  	header( "location: voter-verification-failure.php" );
       			  }
       			}
