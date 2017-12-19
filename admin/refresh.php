@@ -107,33 +107,23 @@ if(isset($_POST['Submit'])) {
         <td bgcolor="#5D7B9D" style="color:#ffffff">Candidate Name</td>
         <td bgcolor="#5D7B9D" style="color:#ffffff">Vote(s)</td>
       </tr>
-      <tr>
 
-        <?php
+      <?php
 
-        if( isset( $_POST['Submit'] ) ) {
-          $result = mysql_query("SELECT * FROM tbcandidates WHERE candidate_position='$position'") or die("There are no records to display ... \n" . mysql_error());
+      if( isset( $_POST['Submit'] ) ) {
+        $result = mysql_query("SELECT * FROM tbcandidates WHERE candidate_position='$position'") or die("There are no records to display ... \n" . mysql_error());
 
-          ;
-
-          while( $row = mysql_fetch_array( $result ) ) {
-            echo "<tr>";
-            echo "<td style='color: black;'>".$row['candidate_position']."</td>";
-
-            echo "<td style='color: black;'>".$row['candidate_name']."</td>";
-
-            echo "<td style='color: black;'>".$row['candidate_cvotes']."</td>";
-            echo "</tr>";
-          }
-
-
+        while( $row = mysql_fetch_array( $result ) ) {
+          echo "<tr>";
+          echo "<td style='color: black;'>".$row['candidate_position']."</td>";
+          echo "<td style='color: black;'>".$row['candidate_name']."</td>";
+          echo "<td style='color: black;'>".$row['candidate_cvotes']."</td>";
+          echo "</tr>";
         }
+      }
 
-        ?>
-
+      ?>
         
-
-      </tr>
     </table>
   
   </div>
