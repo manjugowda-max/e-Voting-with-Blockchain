@@ -23,6 +23,34 @@ if( isset($_GET['vote']) ) {
   $sql = "UPDATE tbmembers SET voter_status='$voter_status' WHERE voter_id='$voterid'";
   $result = mysql_query( $sql ) or die( mysql_error() ); 
 
+  // New Transaction
+
+  $sender = md5( $voterid );
+  $recipient = md5( $vote );
+  $amount = 1;
+
+  $data = array( "sender"=>$sender, "recipient"=>$recipient, "amount"=>$amount );
+  $string = json_encode( $data );
+
+  $ch = curl_init( "http://localhost:5000/transactions/new" );
+  curl_setopt( $ch, CURLOPT_CUSTOMREQUEST, "POST" );
+  curl_setopt( $ch, CURLOPT_HTTPHEADER, array( 'Content-Type:application/json' ) );
+  curl_setopt( $ch, CURLOPT_POSTFIELDS, $string );
+  curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+
+  $result = curl_exec( $ch );
+
+  curl_close( $ch );
+
+  // Mining
+
+  $ch = curl_init( "http://localhost:5000/mine" );
+  curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+
+  $result = curl_exec( $ch );
+
+  curl_close( $ch );
+
   mysql_close( $con );
 
 }
@@ -52,6 +80,7 @@ if( isset($_GET['vote']) ) {
           <ul>
             <li><a href="vote.php">Vote</a></li>
             <li><a href="manage-profile.php">Profile Manager</a></li>
+            <li><a href="result.php">Results</a></li>
           </ul>
         </li>
         

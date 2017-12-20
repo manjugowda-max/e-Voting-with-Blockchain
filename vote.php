@@ -110,13 +110,20 @@ if (isset($_POST['Submit'])) {
 <body id="top">
 
 <div class="wrapper row1">
-  <header id="header" class="hoc clear">
+  <header id="header" class="hoc clear"> 
     <div id="logo" class="fl_left">
       <h1><a href="voter.php">Vote-Chain</a></h1>
     </div>
     <nav id="mainav" class="fl_right">
       <ul class="clear">
         <li class="active"><a href="voter.php">Home</a></li>
+        <li><a class="drop" href="#">Voter Pages</a>
+          <ul>
+            <li><a href="vote.php">Vote</a></li>
+            <li><a href="manage-profile.php">Profile Manager</a></li>
+            <li><a href="result.php">Results</a></li>
+          </ul>
+        </li>
         
         <li><a href="logout.php">Logout</a></li>
       </ul>

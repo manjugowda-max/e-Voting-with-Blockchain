@@ -39,6 +39,7 @@ if( empty( $_SESSION['login_status'] ) ) {
           <ul>
             <li><a href="vote.php">Vote</a></li>
             <li><a href="manage-profile.php">Profile Manager</a></li>
+            <li><a href="result.php">Results</a></li>
           </ul>
         </li>
         

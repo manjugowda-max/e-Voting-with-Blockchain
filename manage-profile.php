@@ -89,6 +89,14 @@ if (isset($_POST['update'])) {
     <nav id="mainav" class="fl_right">
       <ul class="clear">
         <li class="active"><a href="voter.php">Home</a></li>
+        <li><a class="drop" href="#">Voter Pages</a>
+          <ul>
+            <li><a href="vote.php">Vote</a></li>
+            <li><a href="manage-profile.php">Profile Manager</a></li>
+            <li><a href="result.php">Results</a></li>
+          </ul>
+        </li>
+        
         <li><a href="logout.php">Logout</a></li>
       </ul>
     </nav>
