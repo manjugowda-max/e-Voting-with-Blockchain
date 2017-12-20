@@ -25,8 +25,8 @@ if( isset($_GET['vote']) ) {
 
   // New Transaction
 
-  $sender = md5( $voterid );
-  $recipient = md5( $vote );
+  $sender = $voterid;
+  $recipient = $vote;
   $amount = 1;
 
   $data = array( "sender"=>$sender, "recipient"=>$recipient, "amount"=>$amount );
@@ -37,8 +37,7 @@ if( isset($_GET['vote']) ) {
   curl_setopt( $ch, CURLOPT_HTTPHEADER, array( 'Content-Type:application/json' ) );
   curl_setopt( $ch, CURLOPT_POSTFIELDS, $string );
   curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-
-  $result = curl_exec( $ch );
+  curl_exec( $ch );
 
   curl_close( $ch );
 
@@ -46,8 +45,15 @@ if( isset($_GET['vote']) ) {
 
   $ch = curl_init( "http://localhost:5000/mine" );
   curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+  curl_exec( $ch );
 
-  $result = curl_exec( $ch );
+  curl_close( $ch );
+
+  // Saving
+
+  $ch = curl_init( "http://localhost:5000/save" );
+  curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+  curl_exec( $ch );
 
   curl_close( $ch );
 
