@@ -64,7 +64,7 @@ if( empty($_SESSION['member_id'])) {
       			if( isset($_POST['start']) ) {
       			  $voterID = $_SESSION['voter_id'];
 
-      			  $result = exec("C:\\Python36\\python.exe C:\\xampp\\htdocs\\e-voting-with-blockchain\\face-recognition\\recognizer.py. $voterID");
+      			  $result = exec("C:\\Python27\\python.exe C:\\xampp\\htdocs\\e-voting-with-blockchain\\face-recognition\\recognizer.py. $voterID");
 
       			  //echo $result;
 
