@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2017 at 10:58 AM
+-- Generation Time: Dec 20, 2017 at 08:06 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -59,7 +59,7 @@ CREATE TABLE `tbcandidates` (
 --
 
 INSERT INTO `tbcandidates` (`candidate_id`, `candidate_name`, `candidate_position`, `candidate_cvotes`) VALUES
-(1, 'Messi', 'Barca', 1),
+(1, 'Messi', 'Barca', 4),
 (2, 'C. Ronaldo', 'Real', 0),
 (3, 'Inzaghi', 'Milan', 0),
 (4, 'Henry', 'Arsenal', 0);
@@ -162,7 +162,7 @@ ALTER TABLE `tbmembers`
 -- AUTO_INCREMENT for table `tbpositions`
 --
 ALTER TABLE `tbpositions`
-  MODIFY `position_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `position_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
