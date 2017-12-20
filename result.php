@@ -111,9 +111,25 @@ if(isset($_POST['Submit'])) {
         $result = mysql_query("SELECT * FROM tbcandidates WHERE candidate_position='$position'") or die("There are no records to display ... \n" . mysql_error());
 
         while( $row = mysql_fetch_array( $result ) ) {
+          $blockchain = fopen( "blockchain/blocks.txt", "r" ) or die( "Unable to open file!" );
+					$candidate = $row['candidate_name'];
+
+					$votes = 0;
+					while( !feof( $blockchain ) ) {
+					  $data = fgets( $blockchain );
+					  if( substr_count( $data, $candidate ) ) {
+					  	$votes += substr_count( $data, $candidate );
+					  }
+					}
+
+					fclose( $blockchain );
+
           echo "<tr>";
-          echo "<td style='color: black;'>".$row['candidate_name']."</td>";
-          echo "<td style='color: black;'>"."<b>".$row['candidate_cvotes']."</b>"."</td>";
+          echo "<td style='color: black;'>".$candidate."</td>";
+          echo "<td style='color: black;'>"."<b>".$votes."</b>"."</td>";
+
+/*          echo "<td style='color: black;'>".$row['candidate_name']."</td>";
+          echo "<td style='color: black;'>"."<b>".$row['candidate_cvotes']."</b>"."</td>";*/
           echo "</tr>";
         }
       }
